@@ -1,21 +1,21 @@
 # Grav runtime
-www/cranberrylabs/cache/
-www/cranberrylabs/tmp/
-www/cranberrylabs/logs/
-www/cranberrylabs/backup/
-www/cranberrylabs/assets/
-www/cranberrylabs/images/
-www/cranberrylabs/vendor/
-www/cranberrylabs/bin/
-www/cranberrylabs/system/
+cache/
+tmp/
+logs/
+backup/
+assets/
+images/
+vendor/
+bin/
+system/
 
 # Grav boilerplate docs
-www/cranberrylabs/CHANGELOG.md
-www/cranberrylabs/CODE_OF_CONDUCT.md
-www/cranberrylabs/CONTRIBUTING.md
-www/cranberrylabs/LICENSE.txt
-www/cranberrylabs/README.md
-www/cranberrylabs/SECURITY.md
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE.txt
+README.md
+SECURITY.md
 
 # OS junk
 .DS_Store
