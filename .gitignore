@@ -1,0 +1,22 @@
+# Grav runtime
+www/cache/
+www/tmp/
+www/logs/
+www/backup/
+www/assets/
+www/images/
+www/vendor/
+www/bin/
+www/system/
+
+# Grav boilerplate docs
+www/CHANGELOG.md
+www/CODE_OF_CONDUCT.md
+www/CONTRIBUTING.md
+www/LICENSE.txt
+www/README.md
+www/SECURITY.md
+
+# OS junk
+.DS_Store
+Thumbs.db
