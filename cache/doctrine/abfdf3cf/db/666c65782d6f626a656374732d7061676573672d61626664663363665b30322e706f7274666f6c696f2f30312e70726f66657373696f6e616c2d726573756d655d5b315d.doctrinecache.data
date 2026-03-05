@@ -1,0 +1,61 @@
+1772692251
+O:39:"Grav\Common\Flex\Types\Pages\PageObject":4:{s:4:"type";s:5:"pages";s:3:"key";s:29:"portfolio/professional-resume";s:8:"elements";a:4:{s:4:"root";b:0;s:6:"header";a:10:{s:5:"title";s:19:"Professional Resume";s:8:"template";s:6:"resume";s:12:"header_image";s:10:"resume.jpg";s:7:"contact";a:4:{s:8:"location";s:22:"Durham Region, Ontario";s:5:"email";s:21:"sbfevreau@hotmail.com";s:8:"linkedin";s:49:"https://www.linkedin.com/in/spencer-fevreau-tech/";s:6:"github";s:32:"https://github.com/massiveBigGuy";}s:7:"summary";s:64:"Telecom professional and computer systems/cybersecurity student.";s:6:"skills";a:6:{i:0;a:2:{s:8:"category";s:27:"Networking & Infrastructure";s:5:"items";a:6:{i:0;s:15:"Network cabling";i:1;s:6:"TCP/IP";i:2;s:3:"DNS";i:3;s:19:"Firewall management";i:4;s:9:"Cisco iOS";i:5;s:3:"SDN";}}i:1;a:2:{s:8:"category";s:22:"Systems Administration";s:5:"items";a:7:{i:0;s:10:"Proxmox VE";i:1;s:11:"VMware ESXi";i:2;s:14:"Windows Server";i:3;s:16:"Active Directory";i:4;s:6:"HyperV";i:5;s:21:"Linux (Debian/Ubuntu)";i:6;s:4:"VoIP";}}i:2;a:2:{s:8:"category";s:11:"Application";s:5:"items";a:5:{i:0;s:9:"LAMP/LEMP";i:1;s:9:"ELK(SIEM)";i:2;s:6:"Docker";i:3;s:4:"M365";i:4;s:17:"Exchange(on prem)";}}i:3;a:2:{s:8:"category";s:5:"Cloud";s:5:"items";a:3:{i:0;s:3:"AWS";i:1;s:5:"Azure";i:2;s:6:"Linode";}}i:4;a:2:{s:8:"category";s:10:"Automation";s:5:"items";a:3:{i:0;s:10:"PowerShell";i:1;s:14:"Bash scripting";i:2;s:6:"Python";}}i:5;a:2:{s:8:"category";s:19:"Relational Database";s:5:"items";a:1:{i:0;s:24:"mariaDB, SQL, PostgreSQL";}}}s:14:"certifications";a:4:{i:0;s:29:"AWS Academy Cloud Foundations";i:1;s:32:"Bell Telecom Technician Training";i:2;s:70:"Durham College — Computer Systems Technology Diploma (Expected 2025)";i:3;s:60:"Durham College — Protection Security Investigation Diploma";}s:10:"experience";a:2:{i:0;a:4:{s:5:"title";s:22:"Fibre Optic Technician";s:7:"company";s:24:"Bell Technical Solutions";s:6:"period";s:16:"2021 — Present";s:6:"points";a:4:{i:0;s:162:"Responsibilities include installation and repair of fiber optic FTTH internet, IPTV, and home phone services, installing for the future to keep the network clean.";i:1;s:128:"Configuration of gateway modems, fiber terminals, central splitting points, precise splice connections to ensure maximum uptime.";i:2;s:364:"Technical knowledge of common structures to run compliant cable, operational safety practices, equipment, and training to handle heights, including the use of ladders to climb telephone poles, strands, homes and other small structures. Working with safety around telecom, electrical, natural gas and other public infrastructure equipment in all weather conditions.";i:3;s:237:"Responsibility for company equipment including vehicles, tools, other inventory; completing documentation of equipment and manual upkeep of inventory for assigned vehicles. Maintenance and upkeep of personal inventory and assigned tools.";}}i:1;a:4:{s:5:"title";s:14:"Security Guard";s:7:"company";s:16:"Paragon Security";s:6:"period";s:13:"2020 — 2023";s:6:"points";a:2:{i:0;s:139:"At healthcare sites such as Ontario Shores and Lakeridge Health, to education facilities such as Durham College and Ontario Tech University";i:1;s:207:"Worked with access control systems and fire panels, performed monitoring and footage review, responded to incidents, performed physical patrols of the campus, coordinated & responded with emergency services.";}}}s:9:"education";a:2:{i:0;a:4:{s:6:"degree";s:35:"Computer Systems Technology Diploma";s:11:"institution";s:14:"Durham College";s:6:"period";s:16:"2023 — Present";s:5:"notes";s:244:"Coursework focused on IT systems and business solutions for industry. Key courses include computer hardware, data communications & networking, databases, web development, computer software, virtualization, Linux, PowerShell, and cyber security.";}i:1;a:4:{s:6:"degree";s:43:"Protection Security and Investigation (PSI)";s:11:"institution";s:14:"Durham College";s:6:"period";s:13:"2018 — 2020";s:5:"notes";s:106:"Program mainly focused on law enforcement procedures and training, security principles and best practices.";}}s:3:"pdf";s:21:"/user/data/resume.pdf";}s:11:"frontmatter";s:3390:"title: Professional Resume
+template: resume
+header_image: resume.jpg
+
+contact:
+  location: "Durham Region, Ontario"
+  email: "sbfevreau@hotmail.com"
+  linkedin: "https://www.linkedin.com/in/spencer-fevreau-tech/"
+  github: "https://github.com/massiveBigGuy"
+
+summary: "Telecom professional and computer systems/cybersecurity student."
+
+skills:
+  - category: "Networking & Infrastructure"
+    items: ["Network cabling", "TCP/IP", "DNS", "Firewall management", "Cisco iOS", "SDN"]
+  - category: "Systems Administration"
+    items: ["Proxmox VE", "VMware ESXi", "Windows Server", "Active Directory", "HyperV", "Linux (Debian/Ubuntu)", "VoIP"]
+  - category: "Application"
+    items: ["LAMP/LEMP", "ELK(SIEM)", "Docker", "M365", "Exchange(on prem)"]
+  - category: "Cloud"
+    items: ["AWS", "Azure", "Linode"]
+  - category: "Automation"
+    items: ["PowerShell", "Bash scripting", "Python"]
+  - category: "Relational Database"
+    items: ["mariaDB, SQL, PostgreSQL"]
+
+certifications:
+  - "AWS Academy Cloud Foundations"
+  - "Bell Telecom Technician Training"
+  - "Durham College — Computer Systems Technology Diploma (Expected 2025)"
+  - "Durham College — Protection Security Investigation Diploma"
+  
+
+experience:
+  - title: "Fibre Optic Technician"
+    company: "Bell Technical Solutions"
+    period: "2021 — Present"
+    points:
+      - "Responsibilities include installation and repair of fiber optic FTTH internet, IPTV, and home phone services, installing for the future to keep the network clean."
+      - "Configuration of gateway modems, fiber terminals, central splitting points, precise splice connections to ensure maximum uptime."
+      - "Technical knowledge of common structures to run compliant cable, operational safety practices, equipment, and training to handle heights, including the use of ladders to climb telephone poles, strands, homes and other small structures. Working with safety around telecom, electrical, natural gas and other public infrastructure equipment in all weather conditions."
+      - "Responsibility for company equipment including vehicles, tools, other inventory; completing documentation of equipment and manual upkeep of inventory for assigned vehicles. Maintenance and upkeep of personal inventory and assigned tools."
+  - title: "Security Guard"
+    company: "Paragon Security"
+    period: "2020 — 2023"
+    points:
+      - "At healthcare sites such as Ontario Shores and Lakeridge Health, to education facilities such as Durham College and Ontario Tech University"
+      - "Worked with access control systems and fire panels, performed monitoring and footage review, responded to incidents, performed physical patrols of the campus, coordinated & responded with emergency services."
+
+education:
+  - degree: "Computer Systems Technology Diploma"
+    institution: "Durham College"
+    period: "2023 — Present"
+    notes: "Coursework focused on IT systems and business solutions for industry. Key courses include computer hardware, data communications & networking, databases, web development, computer software, virtualization, Linux, PowerShell, and cyber security."
+  - degree: "Protection Security and Investigation (PSI)"
+    institution: "Durham College"
+    period: "2018 — 2020"
+    notes: "Program mainly focused on law enforcement procedures and training, security principles and best practices."
+
+pdf: "/user/data/resume.pdf"";s:8:"markdown";s:0:"";}s:7:"storage";a:6:{s:3:"key";s:29:"portfolio/professional-resume";s:11:"storage_key";s:35:"02.portfolio/01.professional-resume";s:8:"template";s:7:"default";s:17:"storage_timestamp";i:1771921851;s:8:"markdown";a:1:{s:0:"";a:1:{s:7:"default";i:1771921851;}}s:8:"checksum";s:32:"a1a2f61726ad4ee3869bde89ff18ccf3";}}

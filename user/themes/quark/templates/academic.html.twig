@@ -1,0 +1,150 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<div class="academic-page">
+
+    {# Hero #}
+    <div class="academic-hero">
+        <div class="academic-hero-inner">
+            <h1 class="academic-hero-title">Academic Works</h1>
+            <p class="academic-hero-sub">A collection of coursework from my Computer Systems Technology diploma at Durham College.</p>
+        </div>
+    </div>
+
+    {# Main layout #}
+    <div class="academic-layout">
+
+        {# Sidebar #}
+        <div class="academic-sidebar">
+            {% for category in page.header.categories %}
+            <div class="academic-category">
+                <div class="academic-category-header" data-category="{{ category.id }}">
+                    <span>{{ category.name }}</span>
+                    <span class="academic-category-arrow">▾</span>
+                </div>
+                <div class="academic-category-items" id="cat-{{ category.id }}">
+                    {% for project in category.projects %}
+                    <div class="academic-sidebar-item" data-project="{{ project.id }}">
+                        {{ project.title }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {# Content panel #}
+        <div class="academic-content">
+
+            {# Default state #}
+            <div class="academic-welcome" id="academic-welcome">
+                <div class="academic-welcome-inner">
+                    <p class="academic-welcome-icon">📂</p>
+                    <h2>Select a project</h2>
+                    <p>Choose a project to view details.</p>
+                </div>
+            </div>
+
+            {# Project panels #}
+            {% for category in page.header.categories %}
+            {% for project in category.projects %}
+            <div class="academic-project-panel" id="project-{{ project.id }}">
+
+                <div class="academic-project-header">
+                    <div>
+                        <h2 class="academic-project-title">{{ project.title }}</h2>
+                        <span class="academic-project-category">{{ category.name }}</span>
+                    </div>
+                    <div class="academic-project-tags">
+                        {% for tag in project.tags %}
+                        <span class="academic-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="academic-project-body">
+
+                    <div class="academic-project-section">
+                        <h3 class="academic-project-section-title">Overview</h3>
+                        <p>{{ project.description }}</p>
+                    </div>
+
+                    <div class="academic-project-section">
+                        <h3 class="academic-project-section-title">What I Learned</h3>
+                        <p>{{ project.learned }}</p>
+                    </div>
+
+                    {% if project.configs and project.configs|length > 0 %}
+                    <div class="academic-project-section">
+                        <h3 class="academic-project-section-title">Configuration Samples</h3>
+                        {% for config in project.configs %}
+                        <div class="academic-config-block">
+                            <div class="academic-config-label">{{ config.label }}</div>
+                            <pre class="academic-code"><code>{{ config.code }}</code></pre>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {% if project.screenshots and project.screenshots|length > 0 %}
+                    <div class="academic-project-section">
+                        <h3 class="academic-project-section-title">Screenshots</h3>
+                        <div class="academic-screenshots">
+                            {% for shot in project.screenshots %}
+                            <img src="{{ page.media[shot].url }}" alt="Screenshot" class="academic-screenshot">
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const items = document.querySelectorAll('.academic-sidebar-item');
+    const panels = document.querySelectorAll('.academic-project-panel');
+    const welcome = document.getElementById('academic-welcome');
+    const categoryHeaders = document.querySelectorAll('.academic-category-header');
+
+    // Category expand/collapse
+    categoryHeaders.forEach(function (header) {
+        header.addEventListener('click', function () {
+            const id = this.getAttribute('data-category');
+            const items = document.getElementById('cat-' + id);
+            const arrow = this.querySelector('.academic-category-arrow');
+            items.classList.toggle('collapsed');
+            arrow.classList.toggle('rotated');
+        });
+    });
+
+    // Project selection
+    items.forEach(function (item) {
+        item.addEventListener('click', function () {
+            const projectId = this.getAttribute('data-project');
+
+            // Hide welcome
+            welcome.style.display = 'none';
+
+            // Hide all panels
+            panels.forEach(function (p) { p.classList.remove('active'); });
+
+            // Deactivate all sidebar items
+            items.forEach(function (i) { i.classList.remove('active'); });
+
+            // Show selected
+            document.getElementById('project-' + projectId).classList.add('active');
+            this.classList.add('active');
+        });
+    });
+
+});
+</script>
+{% endblock %}

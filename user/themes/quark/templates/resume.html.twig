@@ -1,0 +1,134 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<div class="resume-page">
+
+    {# Hero - matches portfolio style #}
+    <div class="resume-hero">
+        <div class="container">
+            <h1 class="resume-hero-title">Spencer Fevreau</h1>
+            <p class="resume-hero-sub">{{ page.header.summary }}</p>
+            {% if page.header.pdf %}
+            <a href="{{ page.header.pdf }}" class="resume-download-btn" download>
+                ↓ Download PDF
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="resume-container">
+        <div class="columns">
+
+            {# LEFT SIDEBAR #}
+            <div class="column col-3 col-md-12 resume-sidebar">
+
+                {# Contact #}
+                <div class="resume-sidebar-section">
+                    <h3 class="resume-sidebar-heading">Contact</h3>
+                    {% if page.header.contact.location %}
+                    <div class="resume-contact-item">
+                        <span class="resume-contact-icon">📍</span>
+                        {{ page.header.contact.location }}
+                    </div>
+                    {% endif %}
+                    {% if page.header.contact.email %}
+                    <div class="resume-contact-item">
+                        <span class="resume-contact-icon">✉</span>
+                        <a href="mailto:{{ page.header.contact.email }}">{{ page.header.contact.email }}</a>
+                    </div>
+                    {% endif %}
+                    {% if page.header.contact.linkedin %}
+                    <div class="resume-contact-item">
+                        <span class="resume-contact-icon">in</span>
+                        <a href="{{ page.header.contact.linkedin }}" target="_blank">LinkedIn</a>
+                    </div>
+                    {% endif %}
+                    {% if page.header.contact.github %}
+                    <div class="resume-contact-item">
+                        <span class="resume-contact-icon">⌥</span>
+                        <a href="{{ page.header.contact.github }}" target="_blank">GitHub</a>
+                    </div>
+                    {% endif %}
+                </div>
+
+                {# Skills #}
+                {% if page.header.skills %}
+                <div class="resume-sidebar-section">
+                    <h3 class="resume-sidebar-heading">Skills</h3>
+                    {% for group in page.header.skills %}
+                    <div class="resume-skill-group">
+                        <h4 class="resume-skill-category">{{ group.category }}</h4>
+                        <div class="resume-skill-tags">
+                            {% for item in group.items %}
+                            <span class="resume-tag">{{ item }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {# Certifications #}
+                {% if page.header.certifications %}
+                <div class="resume-sidebar-section">
+                    <h3 class="resume-sidebar-heading">Certifications & Education</h3>
+                    {% for cert in page.header.certifications %}
+                    <div class="resume-cert-item">{{ cert }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </div>
+
+            {# RIGHT MAIN CONTENT #}
+            <div class="column col-9 col-md-12 resume-main">
+
+                {# Work Experience #}
+                {% if page.header.experience %}
+                <div class="resume-section">
+                    <h2 class="resume-section-title">Work Experience</h2>
+                    {% for job in page.header.experience %}
+                    <div class="resume-entry">
+                        <div class="resume-entry-header">
+                            <div>
+                                <h3 class="resume-entry-title">{{ job.title }}</h3>
+                                <span class="resume-entry-company">{{ job.company }}</span>
+                            </div>
+                            <span class="resume-entry-period">{{ job.period }}</span>
+                        </div>
+                        <ul class="resume-entry-points">
+                            {% for point in job.points %}
+                            <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {# Education #}
+                {% if page.header.education %}
+                <div class="resume-section">
+                    <h2 class="resume-section-title">Education</h2>
+                    {% for edu in page.header.education %}
+                    <div class="resume-entry">
+                        <div class="resume-entry-header">
+                            <div>
+                                <h3 class="resume-entry-title">{{ edu.degree }}</h3>
+                                <span class="resume-entry-company">{{ edu.institution }}</span>
+                            </div>
+                            <span class="resume-entry-period">{{ edu.period }}</span>
+                        </div>
+                        {% if edu.notes %}
+                        <p class="resume-entry-notes">{{ edu.notes }}</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

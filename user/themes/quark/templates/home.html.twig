@@ -1,0 +1,61 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<div class="home-page">
+
+    {# Hero #}
+    <div class="home-hero">
+        <div class="home-hero-inner">
+            <p class="home-hero-eyebrow">Hi, I'm Spencer</p>
+            <h1 class="home-hero-headline">From fibre optic<br>to full stack.</h1>
+            <p class="home-hero-sub">Telecommunications professional & Computer systems student.</p>
+            <div class="home-hero-ctas">
+                <a href="{{ page.header.portfolio_url }}" class="home-btn-primary">View Portfolio</a>
+                <a href="mailto:{{ page.header.contact_email }}" class="home-btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+
+    {# About #}
+    <div class="home-section home-about">
+        <div class="home-container">
+            <h2 class="home-section-title">About Me</h2>
+            <p class="home-about-text">{{ page.header.about }}</p>
+        </div>
+    </div>
+
+    {# Skills #}
+    <div class="home-section home-skills-section">
+        <div class="home-container">
+            <h2 class="home-section-title">What I Work With</h2>
+            <div class="home-skills-grid">
+                {% for skill in page.header.skills %}
+                <span class="home-skill-tag">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {# Links #}
+    <div class="home-section home-links-section">
+        <div class="home-container home-links-row">
+            {% if page.header.github %}
+            <a href="{{ page.header.github }}" target="_blank" class="home-link-btn">
+                <span class="home-link-icon">⌥</span> GitHub
+            </a>
+            {% endif %}
+            {% if page.header.linkedin %}
+            <a href="{{ page.header.linkedin }}" target="_blank" class="home-link-btn">
+                <span class="home-link-icon">in</span> LinkedIn
+            </a>
+            {% endif %}
+            {% if page.header.contact_email %}
+            <a href="mailto:{{ page.header.contact_email }}" class="home-link-btn">
+                <span class="home-link-icon">✉</span> Email
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

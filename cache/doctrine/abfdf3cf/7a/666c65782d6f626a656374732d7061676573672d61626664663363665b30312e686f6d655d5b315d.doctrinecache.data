@@ -1,0 +1,24 @@
+1772692251
+O:39:"Grav\Common\Flex\Types\Pages\PageObject":4:{s:4:"type";s:5:"pages";s:3:"key";s:4:"home";s:8:"elements";a:4:{s:4:"root";b:0;s:6:"header";a:8:{s:5:"title";s:4:"Home";s:8:"template";s:4:"home";s:5:"about";s:343:"I'm a Fibre Optic Technician at Bell Technical Solutions and Computer Systems Technology student at Durham College, building toward a career in cybersecurity and cloud operations. In my spare time I experiment with my homelab, learning to host services for my family and friends to use and learning about the networks that connect us together.";s:6:"skills";a:12:{i:0;s:20:"Linux Administration";i:1;s:33:"Windows Server & Active Directory";i:2;s:14:"Virtualization";i:3;s:14:"Networking/SDN";i:4;s:3:"DNS";i:5;s:43:"Public Telephone/Fibre Optic Infrastructure";i:6;s:23:"Container Orchestration";i:7;s:9:"Web Stack";i:8;s:20:"Relational Databases";i:9;s:18:"AWS Cloud Services";i:10;s:17:"Bash & PowerShell";i:11;s:3:"VPN";}s:6:"github";s:32:"https://github.com/massiveBigGuy";s:8:"linkedin";s:49:"https://www.linkedin.com/in/spencer-fevreau-tech/";s:13:"contact_email";s:21:"sbfevreau@hotmail.com";s:13:"portfolio_url";s:10:"/portfolio";}s:11:"frontmatter";s:863:"title: Home
+template: home
+
+about: "I'm a Fibre Optic Technician at Bell Technical Solutions and Computer Systems Technology student at Durham College, building toward a career in cybersecurity and cloud operations. In my spare time I experiment with my homelab, learning to host services for my family and friends to use and learning about the networks that connect us together."
+
+skills:
+  - "Linux Administration"
+  - "Windows Server & Active Directory"
+  - "Virtualization"
+  - "Networking/SDN"
+  - "DNS"
+  - "Public Telephone/Fibre Optic Infrastructure"
+  - "Container Orchestration"
+  - "Web Stack"
+  - "Relational Databases"
+  - "AWS Cloud Services"
+  - "Bash & PowerShell"
+  - "VPN"
+
+github: "https://github.com/massiveBigGuy"
+linkedin: "https://www.linkedin.com/in/spencer-fevreau-tech/"
+contact_email: "sbfevreau@hotmail.com"
+portfolio_url: "/portfolio"";s:8:"markdown";s:0:"";}s:7:"storage";a:6:{s:3:"key";s:4:"home";s:11:"storage_key";s:7:"01.home";s:8:"template";s:7:"default";s:17:"storage_timestamp";i:1771918809;s:8:"markdown";a:1:{s:0:"";a:1:{s:7:"default";i:1771918809;}}s:8:"checksum";s:32:"98b7e8724f15f42af9a6e7e9efb6552b";}}

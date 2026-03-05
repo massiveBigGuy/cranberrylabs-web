@@ -1,0 +1,48 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<div class="portfolio-landing">
+
+    <div class="portfolio-hero">
+        <div class="container">
+            <h1 class="portfolio-hero-title">Portfolio</h1>
+            <p class="portfolio-hero-sub">A curated look at my academic, technical, and professional work.</p>
+        </div>
+    </div>
+
+    <div class="portfolio-cards-container">
+        <div class="columns portfolio-grid">
+
+            {% set accents = ['#4A90D9', '#3DAA7D', '#8B6FD4'] %}
+
+            {% for child in page.children %}
+            {% set accent = accents[loop.index0 % accents|length] %}
+            <div class="column col-4 col-md-6 col-sm-12">
+                <a href="{{ child.url }}" class="portfolio-card-link">
+                    <div class="portfolio-card" style="--accent: {{ accent }};">
+                        <div class="portfolio-card-accent"></div>
+
+                        {% if child.header.header_image %}
+                        <div class="portfolio-card-img">
+                            <img src="{{ child.media[child.header.header_image].url }}"
+                                 alt="{{ child.title }}">
+                        </div>
+                        {% endif %}
+
+                        <div class="portfolio-card-body">
+                            <h2 class="portfolio-card-title">{{ child.title }}</h2>
+                            <p class="portfolio-card-summary">{{ child.header.summary }}</p>
+                        </div>
+
+                        <div class="portfolio-card-footer">
+                            <span class="portfolio-card-btn">View &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,974 @@
+/* Purple background for the whole page */
+body,
+#page-wrapper {
+    background-color: #E6E6FA !important;
+}
+
+/* Make content sections transparent so purple shows through */
+.modular-text.bg-gray {
+    background-color: rgba(230, 230, 250, 0.7) !important;
+}
+
+/* Keep content centered */
+.section .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Make the start div a flex container */
+#start {
+    display: flex !important;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* First modular section (main content) */
+#start > section.modular-text:first-of-type {
+    flex: 3 !important;
+}
+
+/* Second modular section (sidebar) */
+#start > section.modular-text:last-of-type {
+    flex: 1 !important;
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+body.template-default .page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section .container {
+    max-width: 95% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* =====================
+   Home Page
+   ===================== */
+
+.home-page {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Hero */
+.home-hero {
+    background: linear-gradient(135deg, #2c2f4a 0%, #3b3f6e 60%, #4a3f6b 100%);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, #e8eaf6);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.home-hero-eyebrow {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.home-hero-headline {
+    color: #ffffff;
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.home-hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.home-hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.home-btn-primary {
+    background: #ffffff;
+    color: #3b3f6e;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.home-btn-primary:hover {
+    background: #e8eaf6;
+    transform: translateY(-2px);
+    color: #3b3f6e;
+}
+
+.home-btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-btn-secondary:hover {
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+/* Sections */
+.home-section {
+    padding: 4rem 0;
+}
+
+.home-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.home-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #3b3f6e;
+    margin-bottom: 1.5rem;
+}
+
+/* About */
+.home-about {
+    background: #ffffff;
+}
+
+.home-about-text {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.8;
+    max-width: 680px;
+}
+
+/* Skills */
+.home-skills-section {
+    background: #f4f5fb;
+}
+
+.home-skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.home-skill-tag {
+    background: #eef2fb;
+    color: #3b3f6e;
+    font-size: 0.82rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    font-weight: 500;
+    border: 1px solid #d4daf5;
+}
+
+/* Links row */
+.home-links-section {
+    background: #ffffff;
+}
+
+.home-links-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.home-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.5rem;
+    border: 2px solid #3b3f6e;
+    border-radius: 4px;
+    color: #3b3f6e;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.home-link-btn:hover {
+    background: #3b3f6e;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.home-link-icon {
+    font-size: 0.85rem;
+}
+
+
+/* =====================
+   Portfolio Landing
+   ===================== */
+
+.portfolio-landing {
+    min-height: 80vh;
+    padding-bottom: 4rem;
+}
+
+.portfolio-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Hero band */
+.portfolio-hero {
+    background: linear-gradient(135deg, #2c2f4a 0%, #3b3f6e 60%, #4a3f6b 100%);
+    padding: 4rem 1rem 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.portfolio-hero-title {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.5px;
+}
+
+.portfolio-hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.portfolio-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #e8eaf6);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.portfolio-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Card grid */
+.portfolio-cards-container {
+    padding: 0 1rem;
+}
+
+.portfolio-grid {
+    justify-content: center;
+}
+
+/* Individual card */
+.portfolio-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 1.5rem;
+    height: 100%;
+}
+
+.portfolio-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.portfolio-card-link:hover .portfolio-card {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+}
+
+/* Colored top accent bar */
+.portfolio-card-accent {
+    height: 5px;
+    background-color: var(--accent, #4A90D9);
+    width: 100%;
+}
+
+/* Image area (shown only when image exists) */
+.portfolio-card-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.portfolio-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card-link:hover .portfolio-card-img img {
+    transform: scale(1.04);
+}
+
+/* Card body */
+.portfolio-card-body {
+    padding: 1.4rem 1.4rem 0.8rem;
+    flex: 1;
+}
+
+.portfolio-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-card-summary {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Card footer */
+.portfolio-card-footer {
+    padding: 1rem 1.4rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.portfolio-card-btn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent, #4A90D9);
+    transition: letter-spacing 0.2s ease;
+}
+
+.portfolio-card-link:hover .portfolio-card-btn {
+    letter-spacing: 0.03em;
+}
+
+.portfolio-landing {
+    width: 100%;
+    max-width: 100%;
+}
+
+.portfolio-hero {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.portfolio-cards-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* =====================
+   Resume Page
+   ===================== */
+
+.resume-hero {
+    background: linear-gradient(135deg, #2c2f4a 0%, #3b3f6e 60%, #4a3f6b 100%);
+    padding: 4rem 1rem 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.resume-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.resume-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #e8eaf6);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.resume-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.resume-hero-title {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.resume-hero-sub {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    max-width: 680px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.7;
+}
+
+.resume-download-btn {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.resume-download-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+}
+
+/* Layout */
+.resume-container {
+    padding-bottom: 4rem;
+}
+
+/* Sidebar */
+.resume-sidebar {
+    padding-right: 2rem;
+}
+
+.resume-sidebar-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.resume-sidebar-section:last-child {
+    border-bottom: none;
+}
+
+.resume-sidebar-heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #3b3f6e;
+    margin-bottom: 0.8rem;
+}
+
+.resume-contact-item {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resume-contact-item a {
+    color: #4A90D9;
+    text-decoration: none;
+}
+
+.resume-contact-icon {
+    font-size: 0.8rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.resume-skill-group {
+    margin-bottom: 1rem;
+}
+
+.resume-skill-category {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.4rem;
+}
+
+.resume-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.resume-tag {
+    background: #eef2fb;
+    color: #3b3f6e;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.resume-cert-item {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 0.6rem;
+    padding-left: 0.8rem;
+    border-left: 3px solid #4A90D9;
+}
+
+/* Main content */
+.resume-section {
+    margin-bottom: 2.5rem;
+}
+
+.resume-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3b3f6e;
+    border-bottom: 2px solid #3b3f6e;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.resume-entry {
+    margin-bottom: 1.8rem;
+}
+
+.resume-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.6rem;
+}
+
+.resume-entry-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0 0 0.2rem;
+}
+
+.resume-entry-company {
+    font-size: 0.88rem;
+    color: #4A90D9;
+    font-weight: 500;
+}
+
+.resume-entry-period {
+    font-size: 0.82rem;
+    color: #888;
+    white-space: nowrap;
+    padding-top: 0.15rem;
+}
+
+.resume-entry-points {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.resume-entry-notes {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+.resume-page {
+    width: 100%;
+    max-width: 100%;
+}
+
+.resume-hero {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.resume-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* =====================
+   Academic Works
+   ===================== */
+
+.academic-page {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Hero */
+.academic-hero {
+    background: linear-gradient(135deg, #2c2f4a 0%, #3b3f6e 60%, #4a3f6b 100%);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.academic-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.academic-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #e8eaf6);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.academic-hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.academic-hero-title {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.academic-hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Layout */
+.academic-layout {
+    display: flex;
+    min-height: 80vh;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Sidebar */
+.academic-sidebar {
+    width: 280px;
+    min-width: 280px;
+    background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 1.5rem 0;
+    overflow-y: auto;
+}
+
+.academic-category {
+    margin-bottom: 0.25rem;
+}
+
+.academic-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #3b3f6e;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s ease;
+}
+
+.academic-category-header:hover {
+    background: #f4f5fb;
+}
+
+.academic-category-arrow {
+    transition: transform 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.academic-category-arrow.rotated {
+    transform: rotate(-90deg);
+}
+
+.academic-category-items {
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+    max-height: 500px;
+}
+
+.academic-category-items.collapsed {
+    max-height: 0;
+}
+
+.academic-sidebar-item {
+    padding: 0.6rem 1.25rem 0.6rem 1.75rem;
+    font-size: 0.88rem;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    border-left: 3px solid transparent;
+    line-height: 1.4;
+}
+
+.academic-sidebar-item:hover {
+    background: #f4f5fb;
+    color: #3b3f6e;
+}
+
+.academic-sidebar-item.active {
+    background: #eef2fb;
+    color: #3b3f6e;
+    font-weight: 600;
+    border-left-color: #4A90D9;
+}
+
+/* Content panel */
+.academic-content {
+    flex: 1;
+    padding: 2.5rem 3rem;
+    overflow-y: auto;
+    background: #f9faff;
+}
+
+/* Welcome state */
+.academic-welcome {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #aaa;
+    padding: 4rem;
+}
+
+.academic-welcome-inner h2 {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+}
+
+.academic-welcome-inner p {
+    font-size: 0.9rem;
+}
+
+.academic-welcome-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Project panels */
+.academic-project-panel {
+    display: none;
+}
+
+.academic-project-panel.active {
+    display: block;
+}
+
+.academic-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.academic-project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.3rem;
+}
+
+.academic-project-category {
+    font-size: 0.82rem;
+    color: #4A90D9;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.academic-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: flex-start;
+}
+
+.academic-tag {
+    background: #eef2fb;
+    color: #3b3f6e;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    font-weight: 500;
+    border: 1px solid #d4daf5;
+}
+
+/* Project sections */
+.academic-project-section {
+    margin-bottom: 2rem;
+}
+
+.academic-project-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #3b3f6e;
+    margin-bottom: 0.75rem;
+}
+
+.academic-project-section p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Code block */
+.academic-code {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 1.25rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+
+.academic-config-block {
+    margin-bottom: 1.25rem;
+}
+
+.academic-config-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #cdd6f4;
+    background: #313244;
+    border: 1px solid #45475a;
+    border-bottom: 1px solid #45475a;
+    padding: 0.4rem 1rem;
+    border-radius: 4px 4px 0 0;
+}
+
+.academic-content pre.academic-code code {
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+    padding: 0 !important;
+}
+
+.academic-config-block .academic-code,
+.academic-config-block pre.academic-code,
+div.academic-config-block > pre.academic-code {
+    background: #1e1e2e !important;
+    color: #cdd6f4 !important;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+    border: none !important;
+}
+
+/* Screenshots */
+.academic-screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.academic-screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+body.hl-fullwidth #start {
+  display: block !important;
+}

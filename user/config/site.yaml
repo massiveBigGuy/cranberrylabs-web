@@ -1,0 +1,19 @@
+title: 'Cranberry Labs'
+default_lang: en
+author:
+  name: 'Spencer Fevreau'
+  email: sbfevreau@hotmail.com
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'Cranberry Labs is a learning homelab environment.'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+redirects: null
+routes: null
+blog:
+  route: /blog

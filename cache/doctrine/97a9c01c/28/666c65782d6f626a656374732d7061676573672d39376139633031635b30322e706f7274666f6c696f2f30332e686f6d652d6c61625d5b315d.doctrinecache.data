@@ -1,0 +1,141 @@
+1772739223
+O:39:"Grav\Common\Flex\Types\Pages\PageObject":4:{s:4:"type";s:5:"pages";s:3:"key";s:18:"portfolio/home-lab";s:8:"elements";a:4:{s:4:"root";b:0;s:6:"header";a:6:{s:5:"title";s:8:"Home Lab";s:8:"template";s:7:"homelab";s:9:"fullwidth";b:1;s:7:"summary";s:81:"Infrastructure documentation examples for my personal project, Cranberrylabs.net.";s:12:"header_image";s:11:"homelab.jpg";s:8:"projects";a:5:{i:0;a:6:{s:2:"id";s:11:"bright-pale";s:5:"title";s:47:"Bright/Pale VM Architecture — Media Isolation";s:4:"tags";a:4:{i:0;s:6:"Docker";i:1;s:9:"WireGuard";i:2;s:7:"Proxmox";i:3;s:8:"Security";}s:11:"description";s:481:"Designed and implemented a two-VM architecture on the Petal node to isolate download activity from media serving. violet-bright handles clean serving (Jellyfin, Caddy, Sonarr library management) while violet-pale handles all download-side operations (qBittorrent, Sonarr indexing, Jackett) with all egress routed through a Mullvad WireGuard tunnel. A kill switch ensures that if the VPN tunnel drops, violet-pale loses internet access entirely rather than falling back to clearnet.";s:7:"learned";s:448:"Learned how to reason about network-level isolation as a security property rather than just a convenience. Routing all egress through a VPN with a kill switch is straightforward in WireGuard config but requires thinking carefully about what happens on failure. Also reinforced the value of separating concerns at the VM boundary as if violet-pale were ever compromised or misbehaving, violet-bright and everything else on the network is unaffected.";s:8:"snippets";a:1:{i:0;a:2:{s:5:"label";s:60:"WireGuard kill switch — PostUp/PreDown rules (violet-pale)";s:4:"code";s:412:"[Interface]
+Address = 10.x.x.x/32
+PrivateKey = <private_key>
+DNS = 10.x.x.x
+
+PostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
+PreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT
+
+[Peer]
+PublicKey = <mullvad_peer_key>
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = <mullvad_endpoint>:51820
+";}}}i:1;a:6:{s:2:"id";s:15:"proxmox-cluster";s:5:"title";s:46:"Three-Node Proxmox VE Cluster Build & Recovery";s:4:"tags";a:4:{i:0;s:7:"Proxmox";i:1;s:2:"HA";i:2;s:7:"Cluster";i:3;s:6:"Debian";}s:11:"description";s:387:"Built a three-node Proxmox VE cluster (strand, petal, filament) running Debian 12 as the base OS. The cluster suffered a catastrophic failure caused by joining a node while HA was active, which split the quorum and took down the entire environment. Performed a full cluster rebuild from scratch, migrating all VMs and reconfiguring cluster networking, storage, and HA settings correctly.";s:7:"learned";s:440:"Learned the hard way that Proxmox cluster operations require quorum to be in a known-good state first. HA and corosync are sensitive to the order of operations. The rebuild reinforced structured documentation habits: having a record of each VM config, network assignments, and storage layout made recovery significantly faster. Also migrated VMs from Ubuntu interim releases to Debian stable during the rebuild for better long-term support.";s:8:"snippets";a:2:{i:0;a:2:{s:5:"label";s:36:"Check cluster quorum and node status";s:4:"code";s:25:"pvecm status
+pvecm nodes
+";}i:1;a:2:{s:5:"label";s:59:"Force quorum on surviving node after split (emergency only)";s:4:"code";s:76:"# Only run if quorum is lost and you are sure of the state
+pvecm expected 1
+";}}}i:2;a:6:{s:2:"id";s:13:"wireguard-vpn";s:5:"title";s:39:"Self-Hosted WireGuard Remote Access VPN";s:4:"tags";a:4:{i:0;s:9:"WireGuard";i:1;s:10:"Networking";i:2;s:3:"VPN";i:3;s:15:"Port Forwarding";}s:11:"description";s:442:"Deployed a dedicated WireGuard VPN server on violet-vpn (172.12.10.7) to allow secure remote access to the homelab from outside the LAN. Configured split tunneling so that LAN-destined traffic routes through the tunnel while internet traffic exits locally on the remote client. Port forwarded the WireGuard UDP port at the router and integrated with the Cloudflare DDNS setup so the endpoint address stays current despite a dynamic public IP.";s:7:"learned";s:426:"Gained practical experience with WireGuard key management, peer configuration, and the difference between full-tunnel and split-tunnel setups. Split tunneling requires careful AllowedIPs configuration on the client, only the LAN subnet needs to be in AllowedIPs rather than 0.0.0.0/0. Also reinforced how DDNS and port forwarding interact: the endpoint in the WireGuard peer config uses the dynamic DNS hostname, not a raw IP.";s:8:"snippets";a:2:{i:0;a:2:{s:5:"label";s:54:"Server config — violet-vpn (/etc/wireguard/wg0.conf)";s:4:"code";s:359:"[Interface]
+Address = 191.70.1.1/24
+ListenPort = 51820
+PrivateKey = <server_private_key>
+
+PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PreDown  = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
+[Peer]
+PublicKey = <client_public_key>
+AllowedIPs = 191.70.1.2/32
+";}i:1;a:2:{s:5:"label";s:42:"Client config — split tunnel to LAN only";s:4:"code";s:235:"[Interface]
+Address = 191.70.1.2/24
+PrivateKey = <client_private_key>
+DNS = 172.12.10.6
+
+[Peer]
+PublicKey = <server_public_key>
+AllowedIPs = 172.12.10.0/24, 191.70.1.0/24
+Endpoint = vpn.cranberrylabs.net:51820
+PersistentKeepalive = 25
+";}}}i:3;a:6:{s:2:"id";s:19:"caddy-reverse-proxy";s:5:"title";s:42:"Caddy Reverse Proxy with Let's Encrypt SSL";s:4:"tags";a:4:{i:0;s:5:"Caddy";i:1;s:3:"SSL";i:2;s:10:"Cloudflare";i:3;s:13:"Let's Encrypt";}s:11:"description";s:376:"Configured Caddy as a reverse proxy on violet-http to terminate SSL for the portfolio website and restrict admin access at the proxy level. SSL certificates are issued via Let's Encrypt using the Cloudflare DNS challenge, which avoids needing port 80 open for ACME validation. Added Fail2Ban to monitor Caddy logs and automatically ban IPs that trigger repeated auth failures.";s:7:"learned";s:249:"Caddy's Caddyfile syntax makes reverse proxy config much simpler than equivalent Apache or Nginx config. Combining Caddy-level access restrictions with Fail2Ban creates two independent layers of protection that do not rely on the application itself.";s:8:"snippets";a:2:{i:0;a:2:{s:5:"label";s:59:"Caddyfile — reverse proxy with LAN/VPN access restriction";s:4:"code";s:183:"cranberrylabs.net {
+  reverse_proxy localhost:8080
+}
+
+admin.cranberrylabs.net {
+  @blocked not remote_ip 172.12.10.0/24 191.70.1.0/24
+  abort @blocked
+  reverse_proxy localhost:8081
+}";}i:1;a:2:{s:5:"label";s:59:"Global block — Let's Encrypt via Cloudflare DNS challenge";s:4:"code";s:45:"{
+  acme_dns cloudflare {env.CF_API_TOKEN}
+}
+";}}}i:4;a:6:{s:2:"id";s:10:"adds-setup";s:5:"title";s:54:"Active Directory Domain Services — cranberrylabs.net";s:4:"tags";a:4:{i:0;s:14:"Windows Server";i:1;s:4:"ADDS";i:2;s:3:"DNS";i:3;s:3:"GPO";}s:11:"description";s:360:"Deployed a Windows Server VM (violet-dc) as a domain controller for the cranberrylabs.net domain. Configured ADDS with a custom OU structure separating administrative accounts from standard users and security groups for RBAC. All LAN hosts point to violet-dc for internal DNS resolution. Applied Group Policy for password policy and account lockout thresholds.";s:7:"learned";s:411:"Designing OU structure before deploying ADDS saves significant rework. Separating user accounts from groups into distinct OUs makes GPO scoping clean and predictable. Running a separate admin account from a daily-use account enforces least privilege in practice, not just on paper. Internal DNS through the DC means all hostnames resolve correctly on the LAN without needing hosts file entries on every machine.";s:8:"snippets";a:1:{i:0;a:2:{s:5:"label";s:41:"PowerShell — create custom OU structure";s:4:"code";s:509:"New-ADOrganizationalUnit -Name "VGroups" -Path "DC=cranberrylabs,DC=net"
+New-ADOrganizationalUnit -Name "VOUs"    -Path "DC=cranberrylabs,DC=net"
+
+New-ADOrganizationalUnit -Name "VAdministration" -Path "OU=VGroups,DC=cranberrylabs,DC=net"
+New-ADOrganizationalUnit -Name "VUsers"          -Path "OU=VGroups,DC=cranberrylabs,DC=net"
+
+New-ADOrganizationalUnit -Name "VAdministration" -Path "OU=VOUs,DC=cranberrylabs,DC=net"
+New-ADOrganizationalUnit -Name "VUsers"          -Path "OU=VOUs,DC=cranberrylabs,DC=net"";}}}}}s:11:"frontmatter";s:8369:"title: 'Home Lab'
+template: homelab
+fullwidth: true
+summary: 'Infrastructure documentation examples for my personal project, Cranberrylabs.net.'
+header_image: homelab.jpg
+projects:
+    -
+        id: bright-pale
+        title: 'Bright/Pale VM Architecture — Media Isolation'
+        tags:
+            - Docker
+            - WireGuard
+            - Proxmox
+            - Security
+        description: 'Designed and implemented a two-VM architecture on the Petal node to isolate download activity from media serving. violet-bright handles clean serving (Jellyfin, Caddy, Sonarr library management) while violet-pale handles all download-side operations (qBittorrent, Sonarr indexing, Jackett) with all egress routed through a Mullvad WireGuard tunnel. A kill switch ensures that if the VPN tunnel drops, violet-pale loses internet access entirely rather than falling back to clearnet.'
+        learned: 'Learned how to reason about network-level isolation as a security property rather than just a convenience. Routing all egress through a VPN with a kill switch is straightforward in WireGuard config but requires thinking carefully about what happens on failure. Also reinforced the value of separating concerns at the VM boundary as if violet-pale were ever compromised or misbehaving, violet-bright and everything else on the network is unaffected.'
+        snippets:
+            -
+                label: 'WireGuard kill switch — PostUp/PreDown rules (violet-pale)'
+                code: "[Interface]\nAddress = 10.x.x.x/32\nPrivateKey = <private_key>\nDNS = 10.x.x.x\n\nPostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT\nPreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT\n\n[Peer]\nPublicKey = <mullvad_peer_key>\nAllowedIPs = 0.0.0.0/0, ::/0\nEndpoint = <mullvad_endpoint>:51820\n"
+    -
+        id: proxmox-cluster
+        title: 'Three-Node Proxmox VE Cluster Build & Recovery'
+        tags:
+            - Proxmox
+            - HA
+            - Cluster
+            - Debian
+        description: 'Built a three-node Proxmox VE cluster (strand, petal, filament) running Debian 12 as the base OS. The cluster suffered a catastrophic failure caused by joining a node while HA was active, which split the quorum and took down the entire environment. Performed a full cluster rebuild from scratch, migrating all VMs and reconfiguring cluster networking, storage, and HA settings correctly.'
+        learned: 'Learned the hard way that Proxmox cluster operations require quorum to be in a known-good state first. HA and corosync are sensitive to the order of operations. The rebuild reinforced structured documentation habits: having a record of each VM config, network assignments, and storage layout made recovery significantly faster. Also migrated VMs from Ubuntu interim releases to Debian stable during the rebuild for better long-term support.'
+        snippets:
+            -
+                label: 'Check cluster quorum and node status'
+                code: "pvecm status\npvecm nodes\n"
+            -
+                label: 'Force quorum on surviving node after split (emergency only)'
+                code: "# Only run if quorum is lost and you are sure of the state\npvecm expected 1\n"
+    -
+        id: wireguard-vpn
+        title: 'Self-Hosted WireGuard Remote Access VPN'
+        tags:
+            - WireGuard
+            - Networking
+            - VPN
+            - 'Port Forwarding'
+        description: 'Deployed a dedicated WireGuard VPN server on violet-vpn (172.12.10.7) to allow secure remote access to the homelab from outside the LAN. Configured split tunneling so that LAN-destined traffic routes through the tunnel while internet traffic exits locally on the remote client. Port forwarded the WireGuard UDP port at the router and integrated with the Cloudflare DDNS setup so the endpoint address stays current despite a dynamic public IP.'
+        learned: 'Gained practical experience with WireGuard key management, peer configuration, and the difference between full-tunnel and split-tunnel setups. Split tunneling requires careful AllowedIPs configuration on the client, only the LAN subnet needs to be in AllowedIPs rather than 0.0.0.0/0. Also reinforced how DDNS and port forwarding interact: the endpoint in the WireGuard peer config uses the dynamic DNS hostname, not a raw IP.'
+        snippets:
+            -
+                label: 'Server config — violet-vpn (/etc/wireguard/wg0.conf)'
+                code: "[Interface]\nAddress = 191.70.1.1/24\nListenPort = 51820\nPrivateKey = <server_private_key>\n\nPostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE\nPreDown  = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE\n\n[Peer]\nPublicKey = <client_public_key>\nAllowedIPs = 191.70.1.2/32\n"
+            -
+                label: 'Client config — split tunnel to LAN only'
+                code: "[Interface]\nAddress = 191.70.1.2/24\nPrivateKey = <client_private_key>\nDNS = 172.12.10.6\n\n[Peer]\nPublicKey = <server_public_key>\nAllowedIPs = 172.12.10.0/24, 191.70.1.0/24\nEndpoint = vpn.cranberrylabs.net:51820\nPersistentKeepalive = 25\n"
+    -
+        id: caddy-reverse-proxy
+        title: 'Caddy Reverse Proxy with Let''s Encrypt SSL'
+        tags:
+            - Caddy
+            - SSL
+            - Cloudflare
+            - 'Let''s Encrypt'
+        description: 'Configured Caddy as a reverse proxy on violet-http to terminate SSL for the portfolio website and restrict admin access at the proxy level. SSL certificates are issued via Let''s Encrypt using the Cloudflare DNS challenge, which avoids needing port 80 open for ACME validation. Added Fail2Ban to monitor Caddy logs and automatically ban IPs that trigger repeated auth failures.'
+        learned: 'Caddy''s Caddyfile syntax makes reverse proxy config much simpler than equivalent Apache or Nginx config. Combining Caddy-level access restrictions with Fail2Ban creates two independent layers of protection that do not rely on the application itself.'
+        snippets:
+            -
+                label: 'Caddyfile — reverse proxy with LAN/VPN access restriction'
+                code: "cranberrylabs.net {\n  reverse_proxy localhost:8080\n}\n\nadmin.cranberrylabs.net {\n  @blocked not remote_ip 172.12.10.0/24 191.70.1.0/24\n  abort @blocked\n  reverse_proxy localhost:8081\n}"
+            -
+                label: 'Global block — Let''s Encrypt via Cloudflare DNS challenge'
+                code: "{\n  acme_dns cloudflare {env.CF_API_TOKEN}\n}\n"
+    -
+        id: adds-setup
+        title: 'Active Directory Domain Services — cranberrylabs.net'
+        tags:
+            - 'Windows Server'
+            - ADDS
+            - DNS
+            - GPO
+        description: 'Deployed a Windows Server VM (violet-dc) as a domain controller for the cranberrylabs.net domain. Configured ADDS with a custom OU structure separating administrative accounts from standard users and security groups for RBAC. All LAN hosts point to violet-dc for internal DNS resolution. Applied Group Policy for password policy and account lockout thresholds.'
+        learned: 'Designing OU structure before deploying ADDS saves significant rework. Separating user accounts from groups into distinct OUs makes GPO scoping clean and predictable. Running a separate admin account from a daily-use account enforces least privilege in practice, not just on paper. Internal DNS through the DC means all hostnames resolve correctly on the LAN without needing hosts file entries on every machine.'
+        snippets:
+            -
+                label: 'PowerShell — create custom OU structure'
+                code: "New-ADOrganizationalUnit -Name \"VGroups\" -Path \"DC=cranberrylabs,DC=net\"\nNew-ADOrganizationalUnit -Name \"VOUs\"    -Path \"DC=cranberrylabs,DC=net\"\n\nNew-ADOrganizationalUnit -Name \"VAdministration\" -Path \"OU=VGroups,DC=cranberrylabs,DC=net\"\nNew-ADOrganizationalUnit -Name \"VUsers\"          -Path \"OU=VGroups,DC=cranberrylabs,DC=net\"\n\nNew-ADOrganizationalUnit -Name \"VAdministration\" -Path \"OU=VOUs,DC=cranberrylabs,DC=net\"\nNew-ADOrganizationalUnit -Name \"VUsers\"          -Path \"OU=VOUs,DC=cranberrylabs,DC=net\""";s:8:"markdown";s:0:"";}s:7:"storage";a:6:{s:3:"key";s:18:"portfolio/home-lab";s:11:"storage_key";s:24:"02.portfolio/03.home-lab";s:8:"template";s:7:"default";s:17:"storage_timestamp";i:1772690210;s:8:"markdown";a:1:{s:0:"";a:1:{s:7:"default";i:1772690210;}}s:8:"checksum";s:32:"3f831c29b4a69b3f583e29f8a57425f9";}}

@@ -1,0 +1,2562 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* homelab.html.twig */
+class __TwigTemplate_f9df399551bd89780aa009684e63da3b7a80e11a59f98b3a029a5e436a0130e6 extends \Twig\Template
+{
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->blocks = [
+            'body_classes' => [$this, 'block_body_classes'],
+            'body' => [$this, 'block_body'],
+        ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "partials/base.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        $this->parent = $this->loadTemplate("partials/base.html.twig", "homelab.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_body_classes($context, array $blocks = [])
+    {
+        $this->displayParentBlock("body_classes", $context, $blocks);
+        echo " hl-fullwidth";
+    }
+
+    // line 5
+    public function block_body($context, array $blocks = [])
+    {
+        // line 6
+        echo "<section id=\"body-wrapper\" class=\"section\" style=\"padding:0;background:#0a0c0f;\">
+<div style=\"width:100%;max-width:100%;padding:0;margin:0;background:#0a0c0f;\">
+<link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;800&display=swap\" rel=\"stylesheet\">
+
+<style>
+
+/* ── RESET & SCOPE ───────────────────────────────────────────── */
+.hl-page * { box-sizing: border-box; }
+
+/* ── PAGE VARIABLES ──────────────────────────────────────────── */
+.hl-page {
+  --bg:          #0a0c0f;
+  --bg2:         #0f1217;
+  --bg3:         #151a22;
+  --panel:       #111620;
+  --border:      #1e2736;
+  --border2:     #2a3548;
+  --accent:      #00d4ff;
+  --accent2:     #0099cc;
+  --accent-dim:  rgba(0,212,255,0.12);
+  --accent-glow: rgba(0,212,255,0.25);
+  --green:       #00e676;
+  --green-dim:   rgba(0,230,118,0.12);
+  --yellow:      #ffd740;
+  --yellow-dim:  rgba(255,215,64,0.12);
+  --purple:      #ce93d8;
+  --text:        #e8ecf0;
+  --text2:       #8899aa;
+  --text3:       #4a5a6a;
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── NOISE OVERLAY ───────────────────────────────────────────── */
+.hl-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hl-hero {
+  padding: 90px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+.hl-hero-domain {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hl-hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0px;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+.hl-hero-sub {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 1px;
+}
+
+/* ── INNER WRAP ──────────────────────────────────────────────── */
+.hl-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── STATUS BAR ──────────────────────────────────────────────── */
+.hl-status {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  flex-wrap: wrap;
+}
+.hl-stat { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+.hl-dot { width: 6px; height: 6px; border-radius: 50%; }
+.hl-dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); animation: hlpulse 2.5s infinite; }
+.hl-stat-label { color: var(--text3); }
+.hl-stat-val { color: var(--text); font-weight: 500; }
+@keyframes hlpulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+/* ── VIEW TOGGLE ─────────────────────────────────────────────── */
+.hl-toggle {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 32px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px;
+  width: fit-content;
+}
+.hl-toggle-btn {
+  padding: 7px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text3);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+.hl-toggle-btn:hover { color: var(--text2); }
+.hl-toggle-btn.active { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,0.3); }
+
+/* ── TOPO WRAP ───────────────────────────────────────────────── */
+.hl-topo-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 40px 24px;
+  margin-bottom: 20px;
+  position: relative;
+  min-height: 480px;
+}
+
+/* ── TOPO VIEWS ──────────────────────────────────────────────── */
+.hl-view { display: none; }
+.hl-view.active { display: block; }
+
+.hl-grid { display: flex; flex-direction: column; align-items: center; }
+.hl-row  { display: flex; justify-content: center; align-items: center; gap: 24px; position: relative; z-index: 2; margin: 14px 0; }
+.hl-row.nodes { gap: 32px; margin-top: 28px; align-items: flex-start; }
+.hl-vline { width: 1px; background: var(--border2); margin: 0 auto; }
+.hl-subnet { font-size: 9px; color: var(--text3); letter-spacing: 1px; text-align: center; margin: 2px 0; }
+
+/* ── GENERIC NODES ───────────────────────────────────────────── */
+.hl-node {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+.hl-node:hover  { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 20px var(--accent-glow); }
+.hl-node.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 28px var(--accent-glow); background: var(--accent-dim); }
+.hl-node-inner { padding: 10px 14px; }
+.hl-label  { font-size: 12px; font-weight: 700; color: var(--text); white-space: nowrap; letter-spacing: 0px; }
+.hl-sub    { font-size: 10px; color: var(--text3); margin-top: 2px; white-space: nowrap; }
+.hl-ip     { font-size: 9px; color: var(--accent2); margin-top: 3px; font-weight: 500; }
+.hl-badge  {
+  position: absolute; top: -7px; right: 8px;
+  font-size: 8px; font-weight: 700; letter-spacing: 2px;
+  padding: 2px 6px; border-radius: 2px; text-transform: uppercase;
+}
+.badge-gw  { background: var(--yellow-dim); color: var(--yellow); border: 1px solid rgba(255,215,64,0.3); }
+.badge-l2  { background: rgba(100,120,160,0.2); color: #7090c0; border: 1px solid rgba(100,120,160,0.3); }
+
+/* ── PVE NODE CONTAINERS ─────────────────────────────────────── */
+.hl-pve { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.hl-pve-header {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  min-width: 156px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hl-pve-header:hover  { border-color: var(--accent); box-shadow: 0 0 16px var(--accent-glow); }
+.hl-pve-header.active { border-color: var(--accent); background: var(--accent-dim); }
+.hl-pve-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 800; color: var(--accent); letter-spacing: 1px; }
+.hl-pve-sub  { font-size: 9px; color: var(--text3); margin-top: 2px; }
+.hl-vms { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+
+/* ── VM NODES ────────────────────────────────────────────────── */
+.hl-vm {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 156px;
+}
+.hl-vm:hover  { border-color: var(--green); box-shadow: 0 0 12px rgba(0,230,118,0.2); }
+.hl-vm.active { border-color: var(--green); background: var(--green-dim); }
+.hl-vm-name  { font-size: 11px; font-weight: 700; color: var(--text); }
+.hl-vm-role  { font-size: 9px; color: var(--text3); margin-top: 1px; }
+.hl-vm-ip    { font-size: 9px; color: var(--accent2); margin-top: 2px; }
+
+/* ── WIREGUARD TUNNELS ───────────────────────────────────────── */
+.hl-wg {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 14px;
+  background: rgba(206,147,216,0.07);
+  border: 1px dashed rgba(206,147,216,0.3);
+  border-radius: 4px;
+  font-size: 10px; color: var(--purple);
+  cursor: pointer; transition: all 0.2s;
+}
+.hl-wg:hover  { background: rgba(206,147,216,0.13); border-color: var(--purple); }
+.hl-wg.active { background: rgba(206,147,216,0.16); border-color: var(--purple); }
+.hl-wg-name  { font-size: 11px; font-weight: 700; }
+.hl-wg-sub   { font-size: 9px; opacity: 0.7; margin-top: 2px; }
+
+/* ── PHYSICAL VIEW ───────────────────────────────────────────── */
+.hl-hw {
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 10px 16px;
+  text-align: center;
+  min-width: 148px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hl-hw:hover  { border-color: var(--yellow); box-shadow: 0 0 14px var(--yellow-dim); }
+.hl-hw.active { border-color: var(--yellow); background: var(--yellow-dim); }
+.hl-hw-name  { font-size: 12px; font-weight: 700; }
+.hl-hw-sub   { font-size: 9px; color: var(--text3); margin-top: 2px; }
+.hl-hw-spec  { font-size: 9px; color: var(--text2); margin-top: 5px; line-height: 1.6; }
+
+/* ── AD VIEW ─────────────────────────────────────────────────── */
+.hl-ad-node {
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 9px 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 200px;
+}
+.hl-ad-node:hover  { border-color: var(--accent); }
+.hl-ad-node.active { border-color: var(--accent); background: var(--accent-dim); }
+.hl-ad-name  { font-size: 13px; font-weight: 700; color: var(--accent); }
+.hl-ad-sub   { font-size: 9px; color: var(--text3); margin-top: 2px; }
+
+.hl-ad-children {
+  display: flex; gap: 48px; margin-top: 0;
+  padding-top: 24px; position: relative;
+}
+.hl-ad-children::before {
+  content: ''; position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%); width: 1px; height: 24px; background: var(--border2);
+}
+.hl-ad-branch {
+  display: flex; flex-direction: column; align-items: center; position: relative;
+}
+.hl-ad-branch::before {
+  content: ''; position: absolute; top: -24px; left: 50%;
+  transform: translateX(-50%); width: 1px; height: 24px; background: var(--border2);
+}
+.hl-ou {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 6px 16px;
+  text-align: center;
+  min-width: 140px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hl-ou:hover  { border-color: var(--yellow); }
+.hl-ou.active { border-color: var(--yellow); background: var(--yellow-dim); }
+.hl-ou-name  { font-size: 11px; font-weight: 700; color: var(--yellow); }
+.hl-ou-sub   { font-size: 9px; color: var(--text3); margin-top: 1px; }
+
+.hl-leaves {
+  display: flex; gap: 8px; margin-top: 24px; position: relative;
+}
+.hl-leaves::before {
+  content: ''; position: absolute; top: -24px; left: 50%;
+  transform: translateX(-50%); width: 1px; height: 24px; background: var(--border);
+}
+.hl-leaf {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 3px; padding: 5px 10px; text-align: center;
+  font-size: 10px; color: var(--text2); min-width: 96px;
+}
+.hl-leaf-type { font-size: 8px; color: var(--text3); margin-top: 1px; }
+
+/* ── DETAIL PANEL ────────────────────────────────────────────── */
+.hl-detail {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+.hl-detail.open { max-height: 600px; opacity: 1; }
+.hl-detail-inner { padding: 24px 28px; }
+.hl-detail-header {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 16px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.hl-detail-name { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--text); }
+.hl-detail-type { font-size: 10px; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; }
+.hl-detail-close {
+  margin-left: auto; font-size: 10px; color: var(--text3);
+  cursor: pointer; padding: 2px 8px; border: 1px solid var(--border);
+  border-radius: 2px; background: none; font-family: 'JetBrains Mono', monospace;
+  transition: all 0.15s; letter-spacing: 1px;
+}
+.hl-detail-close:hover { color: var(--text); border-color: var(--text3); }
+
+.hl-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.hl-section-title {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 8px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.hl-list { list-style: none; }
+.hl-list li {
+  font-size: 11px; color: var(--text2); padding: 4px 0;
+  display: flex; gap: 8px; align-items: flex-start; line-height: 1.5;
+}
+.hl-list li::before { content: '›'; color: var(--accent); flex-shrink: 0; }
+.hl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.hl-tag {
+  font-size: 9px; padding: 3px 8px; border-radius: 2px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  color: var(--text2); letter-spacing: 1px;
+}
+
+/* ── LEGEND ──────────────────────────────────────────────────── */
+.hl-legend {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  padding: 12px 0; border-top: 1px solid var(--border); margin-top: 4px;
+}
+.hl-legend-item { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--text3); }
+.hl-legend-dot  { width: 8px; height: 8px; border-radius: 1px; }
+
+/* ── PROJECTS SECTION ────────────────────────────────────────── */
+.hl-projects {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.hl-projects-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.hl-projects-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0px;
+}
+.hl-projects-count {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 2px;
+}
+
+/* accordion row */
+.hl-acc-item {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.hl-acc-item:hover { border-color: var(--border2); }
+.hl-acc-item.open  { border-color: var(--accent); }
+
+.hl-acc-trigger {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--panel);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.hl-acc-trigger:hover { background: var(--bg3); }
+.hl-acc-item.open .hl-acc-trigger { background: var(--bg3); }
+
+.hl-acc-arrow {
+  font-size: 10px;
+  color: var(--text3);
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.hl-acc-item.open .hl-acc-arrow { transform: rotate(90deg); color: var(--accent); }
+
+.hl-acc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  flex: 1;
+}
+.hl-acc-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.hl-acc-tag {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  color: var(--text3);
+  letter-spacing: 1px;
+}
+.hl-acc-item.open .hl-acc-tag { border-color: rgba(0,212,255,0.2); color: var(--accent2); }
+
+/* accordion body */
+.hl-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.hl-acc-item.open .hl-acc-body { max-height: 1200px; }
+.hl-acc-inner {
+  padding: 20px 20px 24px 44px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.hl-acc-section-title {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.hl-acc-desc {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+.hl-acc-learned {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+/* code snippet inside accordion */
+.hl-acc-snippets {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+.hl-snippet {
+  margin-bottom: 14px;
+}
+.hl-snippet:last-child { margin-bottom: 0; }
+.hl-snippet-label {
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.hl-snippet-code {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-size: 11px;
+  color: #a8d8a0;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .hl-detail-grid { grid-template-columns: 1fr; }
+  .hl-row.nodes   { flex-direction: column; align-items: center; }
+  .hl-ad-children { flex-direction: column; align-items: center; gap: 24px; }
+  .hl-acc-inner   { grid-template-columns: 1fr; padding-left: 20px; }
+  .hl-acc-tags    { display: none; }
+}
+
+/* ── RESPONSIVE FONT SCALING ─────────────────────────────────── */
+@media (min-width: 1280px) {
+          .hl-hero-domain { font-size: 12px; }
+  .hl-hero h1 { font-size: 40px; }
+  .hl-hero-sub { font-size: 12px; }
+  .hl-stat { font-size: 12px; }
+  .hl-toggle-btn { font-size: 12px; }
+  .hl-subnet { font-size: 10px; }
+  .hl-label { font-size: 13px; }
+  .hl-sub { font-size: 11px; }
+  .hl-ip { font-size: 10px; }
+  .hl-badge { font-size: 9px; }
+  .hl-pve-name { font-size: 14px; }
+  .hl-pve-sub { font-size: 10px; }
+  .hl-vm-name { font-size: 12px; }
+  .hl-vm-role { font-size: 10px; }
+  .hl-vm-ip { font-size: 10px; }
+  .hl-wg { font-size: 11px; }
+  .hl-wg-name { font-size: 12px; }
+  .hl-wg-sub { font-size: 10px; }
+  .hl-hw-name { font-size: 13px; }
+  .hl-hw-sub { font-size: 10px; }
+  .hl-hw-spec { font-size: 10px; }
+  .hl-ad-name { font-size: 14px; }
+  .hl-ad-sub { font-size: 10px; }
+  .hl-ou-name { font-size: 12px; }
+  .hl-ou-sub { font-size: 10px; }
+  .hl-leaf { font-size: 11px; }
+  .hl-leaf-type { font-size: 9px; }
+  .hl-detail-name { font-size: 22px; }
+  .hl-detail-type { font-size: 11px; }
+  .hl-detail-close { font-size: 11px; }
+  .hl-section-title { font-size: 10px; }
+  .hl-list li { font-size: 12px; }
+  .hl-tag { font-size: 10px; }
+  .hl-legend-item { font-size: 11px; }
+  .hl-projects-title { font-size: 24px; }
+  .hl-projects-count { font-size: 12px; }
+  .hl-acc-arrow { font-size: 11px; }
+  .hl-acc-title { font-size: 14px; }
+  .hl-acc-tag { font-size: 10px; }
+  .hl-acc-section-title { font-size: 10px; }
+  .hl-acc-desc { font-size: 12px; }
+  .hl-acc-learned { font-size: 12px; }
+  .hl-snippet-label { font-size: 10px; }
+  .hl-snippet-code { font-size: 12px; }
+}
+@media (min-width: 1440px) {
+          .hl-hero-domain { font-size: 13px; }
+  .hl-hero h1 { font-size: 43px; }
+  .hl-hero-sub { font-size: 13px; }
+  .hl-stat { font-size: 13px; }
+  .hl-toggle-btn { font-size: 13px; }
+  .hl-subnet { font-size: 11px; }
+  .hl-label { font-size: 14px; }
+  .hl-sub { font-size: 12px; }
+  .hl-ip { font-size: 11px; }
+  .hl-badge { font-size: 10px; }
+  .hl-pve-name { font-size: 16px; }
+  .hl-pve-sub { font-size: 11px; }
+  .hl-vm-name { font-size: 13px; }
+  .hl-vm-role { font-size: 11px; }
+  .hl-vm-ip { font-size: 11px; }
+  .hl-wg { font-size: 12px; }
+  .hl-wg-name { font-size: 13px; }
+  .hl-wg-sub { font-size: 11px; }
+  .hl-hw-name { font-size: 14px; }
+  .hl-hw-sub { font-size: 11px; }
+  .hl-hw-spec { font-size: 11px; }
+  .hl-ad-name { font-size: 16px; }
+  .hl-ad-sub { font-size: 11px; }
+  .hl-ou-name { font-size: 13px; }
+  .hl-ou-sub { font-size: 11px; }
+  .hl-leaf { font-size: 12px; }
+  .hl-leaf-type { font-size: 10px; }
+  .hl-detail-name { font-size: 24px; }
+  .hl-detail-type { font-size: 12px; }
+  .hl-detail-close { font-size: 12px; }
+  .hl-section-title { font-size: 11px; }
+  .hl-list li { font-size: 13px; }
+  .hl-tag { font-size: 11px; }
+  .hl-legend-item { font-size: 12px; }
+  .hl-projects-title { font-size: 26px; }
+  .hl-projects-count { font-size: 13px; }
+  .hl-acc-arrow { font-size: 12px; }
+  .hl-acc-title { font-size: 16px; }
+  .hl-acc-tag { font-size: 11px; }
+  .hl-acc-section-title { font-size: 11px; }
+  .hl-acc-desc { font-size: 13px; }
+  .hl-acc-learned { font-size: 13px; }
+  .hl-snippet-label { font-size: 11px; }
+  .hl-snippet-code { font-size: 13px; }
+}
+@media (min-width: 1920px) {
+          .hl-hero-domain { font-size: 15px; }
+  .hl-hero h1 { font-size: 49px; }
+  .hl-hero-sub { font-size: 15px; }
+  .hl-stat { font-size: 15px; }
+  .hl-toggle-btn { font-size: 15px; }
+  .hl-subnet { font-size: 12px; }
+  .hl-label { font-size: 16px; }
+  .hl-sub { font-size: 14px; }
+  .hl-ip { font-size: 12px; }
+  .hl-badge { font-size: 11px; }
+  .hl-pve-name { font-size: 18px; }
+  .hl-pve-sub { font-size: 12px; }
+  .hl-vm-name { font-size: 15px; }
+  .hl-vm-role { font-size: 12px; }
+  .hl-vm-ip { font-size: 12px; }
+  .hl-wg { font-size: 14px; }
+  .hl-wg-name { font-size: 15px; }
+  .hl-wg-sub { font-size: 12px; }
+  .hl-hw-name { font-size: 16px; }
+  .hl-hw-sub { font-size: 12px; }
+  .hl-hw-spec { font-size: 12px; }
+  .hl-ad-name { font-size: 18px; }
+  .hl-ad-sub { font-size: 12px; }
+  .hl-ou-name { font-size: 15px; }
+  .hl-ou-sub { font-size: 12px; }
+  .hl-leaf { font-size: 14px; }
+  .hl-leaf-type { font-size: 11px; }
+  .hl-detail-name { font-size: 27px; }
+  .hl-detail-type { font-size: 14px; }
+  .hl-detail-close { font-size: 14px; }
+  .hl-section-title { font-size: 12px; }
+  .hl-list li { font-size: 15px; }
+  .hl-tag { font-size: 12px; }
+  .hl-legend-item { font-size: 14px; }
+  .hl-projects-title { font-size: 30px; }
+  .hl-projects-count { font-size: 15px; }
+  .hl-acc-arrow { font-size: 14px; }
+  .hl-acc-title { font-size: 18px; }
+  .hl-acc-tag { font-size: 12px; }
+  .hl-acc-section-title { font-size: 12px; }
+  .hl-acc-desc { font-size: 15px; }
+  .hl-acc-learned { font-size: 15px; }
+  .hl-snippet-label { font-size: 12px; }
+  .hl-snippet-code { font-size: 15px; }
+}
+</style>
+
+";
+        // line 659
+        echo "<div class=\"hl-page\">
+
+  ";
+        // line 662
+        echo "  <div class=\"hl-hero\">
+    <div class=\"hl-inner\" style=\"padding-bottom:0;\">
+      <div class=\"hl-hero-domain\">cranberrylabs.net / infrastructure</div>
+      <h1>Cranberry Lab</h1>
+      <div class=\"hl-hero-sub\">Proxmox VE Cluster — 3 Nodes</div>
+    </div>
+  </div>
+
+  <div class=\"hl-inner\">
+
+    ";
+        // line 673
+        echo "    <div class=\"hl-status\">
+      <div class=\"hl-stat\"><div class=\"hl-dot green\"></div><span class=\"hl-stat-label\">Nodes</span><span class=\"hl-stat-val\">3 online</span></div>
+      <div class=\"hl-stat\"><div class=\"hl-dot green\"></div><span class=\"hl-stat-label\">VMs</span><span class=\"hl-stat-val\">7 running</span></div>
+      <div class=\"hl-stat\"><span class=\"hl-stat-label\">LAN</span><span class=\"hl-stat-val\">172.12.10.0/24</span></div>
+      <div class=\"hl-stat\"><span class=\"hl-stat-label\">WireGuard</span><span class=\"hl-stat-val\">191.70.1.0/24</span></div>
+      <div class=\"hl-stat\"><span class=\"hl-stat-label\">Domain</span><span class=\"hl-stat-val\">cranberrylabs.net</span></div>
+    </div>
+
+    ";
+        // line 682
+        echo "    <div class=\"hl-toggle\">
+      <button class=\"hl-toggle-btn active\" onclick=\"hlSetView('logical',this)\">Logical</button>
+      <button class=\"hl-toggle-btn\" onclick=\"hlSetView('physical',this)\">Physical</button>
+      <button class=\"hl-toggle-btn\" onclick=\"hlSetView('ad',this)\">AD / Directory</button>
+    </div>
+
+    ";
+        // line 689
+        echo "    <div id=\"hl-logical\" class=\"hl-view active\">
+      <div class=\"hl-topo-wrap\">
+        <div class=\"hl-grid\">
+
+          <div class=\"hl-row\">
+            <div class=\"hl-node\" onclick=\"hlShow('internet',this)\">
+              <div class=\"hl-node-inner\"><div class=\"hl-label\">INTERNET</div><div class=\"hl-sub\">ISP / WAN</div></div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\">
+            <div class=\"hl-node\" onclick=\"hlShow('router',this)\">
+              <div class=\"hl-badge badge-gw\">Gateway</div>
+              <div class=\"hl-node-inner\">
+                <div class=\"hl-label\">Router</div>
+                <div class=\"hl-sub\">DHCP · DDNS · NAT · Port Fwd</div>
+                <div class=\"hl-ip\">172.12.10.1</div>
+              </div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\">
+            <div class=\"hl-node\" onclick=\"hlShow('switch',this)\">
+              <div class=\"hl-badge badge-l2\">L2</div>
+              <div class=\"hl-node-inner\">
+                <div class=\"hl-label\">Unmanaged Switch</div>
+                <div class=\"hl-sub\">172.12.10.0/24 LAN</div>
+              </div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:16px;\"></div>
+          <div class=\"hl-subnet\">172.12.10.0 / 24</div>
+          <div class=\"hl-vline\" style=\"height:8px;\"></div>
+
+          <div class=\"hl-row nodes\">
+
+            ";
+        // line 731
+        echo "            <div class=\"hl-pve\">
+              <div class=\"hl-pve-header\" onclick=\"hlShow('strand',this)\">
+                <div class=\"hl-pve-name\">STRAND</div>
+                <div class=\"hl-pve-sub\">PVE Node</div>
+              </div>
+              <div class=\"hl-vms\">
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-dc',this)\">
+                  <div class=\"hl-vm-name\">violet-dc</div>
+                  <div class=\"hl-vm-role\">Domain Controller</div>
+                  <div class=\"hl-vm-ip\">172.12.10.6</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-vpn',this)\">
+                  <div class=\"hl-vm-name\">violet-vpn</div>
+                  <div class=\"hl-vm-role\">WireGuard VPN Server</div>
+                  <div class=\"hl-vm-ip\">172.12.10.7</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-http',this)\">
+                  <div class=\"hl-vm-name\">violet-http</div>
+                  <div class=\"hl-vm-role\">HTTP / LAMP Stack</div>
+                  <div class=\"hl-vm-ip\">172.12.10.20</div>
+                </div>
+              </div>
+            </div>
+
+            ";
+        // line 756
+        echo "            <div class=\"hl-pve\">
+              <div class=\"hl-pve-header\" onclick=\"hlShow('petal',this)\">
+                <div class=\"hl-pve-name\">PETAL</div>
+                <div class=\"hl-pve-sub\">PVE Node</div>
+              </div>
+              <div class=\"hl-vms\">
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-bright',this)\">
+                  <div class=\"hl-vm-name\">violet-bright</div>
+                  <div class=\"hl-vm-role\">Media Serving (Clean)</div>
+                  <div class=\"hl-vm-ip\">172.12.10.38</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-pale',this)\">
+                  <div class=\"hl-vm-name\">violet-pale</div>
+                  <div class=\"hl-vm-role\">Downloads (Isolated)</div>
+                  <div class=\"hl-vm-ip\">172.12.10.65</div>
+                </div>
+              </div>
+            </div>
+
+            ";
+        // line 776
+        echo "            <div class=\"hl-pve\">
+              <div class=\"hl-pve-header\" onclick=\"hlShow('filament',this)\">
+                <div class=\"hl-pve-name\">FILAMENT</div>
+                <div class=\"hl-pve-sub\">PVE Node</div>
+              </div>
+              <div class=\"hl-vms\">
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-gs',this)\">
+                  <div class=\"hl-vm-name\">violet-gs</div>
+                  <div class=\"hl-vm-role\">Game Servers</div>
+                  <div class=\"hl-vm-ip\">172.12.10.11</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-paper',this)\">
+                  <div class=\"hl-vm-name\">violet-paper</div>
+                  <div class=\"hl-vm-role\">Minecraft Server</div>
+                  <div class=\"hl-vm-ip\">172.12.10.12</div>
+                </div>
+              </div>
+            </div>
+
+          </div>";
+        // line 796
+        echo "
+          <div style=\"height:20px;\"></div>
+
+          <div class=\"hl-row\" style=\"gap:14px;flex-wrap:wrap;\">
+            <div class=\"hl-wg\" onclick=\"hlShow('wg-remote',this)\">
+              <span style=\"font-size:16px;\">⬡</span>
+              <div>
+                <div class=\"hl-wg-name\">WireGuard — Remote Access</div>
+                <div class=\"hl-wg-sub\">violet-vpn · 191.70.1.0/24 · Split tunnel</div>
+              </div>
+            </div>
+            <div class=\"hl-wg\" onclick=\"hlShow('wg-mullvad',this)\">
+              <span style=\"font-size:16px;\">⬡</span>
+              <div>
+                <div class=\"hl-wg-name\">WireGuard — Mullvad Exit</div>
+                <div class=\"hl-wg-sub\">violet-pale · Egress only · Download isolation</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class=\"hl-legend\">
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--yellow);\"></div>Network Hardware</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--accent);\"></div>Proxmox Node</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--green);\"></div>Virtual Machine</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--purple);\"></div>WireGuard Tunnel</div>
+      </div>
+    </div>";
+        // line 826
+        echo "
+    ";
+        // line 828
+        echo "    <div id=\"hl-physical\" class=\"hl-view\">
+      <div class=\"hl-topo-wrap\">
+        <div class=\"hl-grid\">
+
+          <div class=\"hl-row\">
+            <div class=\"hl-hw\" onclick=\"hlShow('router',this)\">
+              <div class=\"hl-hw-name\" style=\"color:var(--yellow);\">Router</div>
+              <div class=\"hl-hw-sub\">Gateway / NAT</div>
+              <div class=\"hl-hw-spec\">172.12.10.1<br>DHCP · Port Fwd · DDNS</div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\">
+            <div class=\"hl-hw\" onclick=\"hlShow('switch',this)\">
+              <div class=\"hl-hw-name\" style=\"color:#7090c0;\">Unmanaged Switch</div>
+              <div class=\"hl-hw-sub\">Layer 2</div>
+              <div class=\"hl-hw-spec\">All nodes on flat LAN<br>No VLANs / trunking</div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\" style=\"gap:36px;align-items:flex-start;\">
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+              <div class=\"hl-vline\" style=\"height:14px;\"></div>
+              <div class=\"hl-hw\" onclick=\"hlShow('strand',this)\" style=\"min-width:164px;\">
+                <div class=\"hl-hw-name\" style=\"color:var(--accent);\">STRAND</div>
+                <div class=\"hl-hw-sub\">Proxmox VE Node</div>
+                <div class=\"hl-hw-spec\">Debian 12 base<br>3 VMs: DC, VPN, HTTP</div>
+              </div>
+            </div>
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+              <div class=\"hl-vline\" style=\"height:14px;\"></div>
+              <div class=\"hl-hw\" onclick=\"hlShow('petal',this)\" style=\"min-width:164px;\">
+                <div class=\"hl-hw-name\" style=\"color:var(--accent);\">PETAL</div>
+                <div class=\"hl-hw-sub\">Proxmox VE Node</div>
+                <div class=\"hl-hw-spec\">Debian 12 base<br>2 VMs: bright, pale</div>
+              </div>
+            </div>
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+              <div class=\"hl-vline\" style=\"height:14px;\"></div>
+              <div class=\"hl-hw\" onclick=\"hlShow('filament',this)\" style=\"min-width:164px;\">
+                <div class=\"hl-hw-name\" style=\"color:var(--accent);\">FILAMENT</div>
+                <div class=\"hl-hw-sub\">Proxmox VE Node</div>
+                <div class=\"hl-hw-spec\">Debian 12 base<br>2 VMs: gs, paper</div>
+              </div>
+            </div>
+          </div>
+
+          <div style=\"height:20px;text-align:center;padding-top:16px;\">
+            <div style=\"font-size:9px;color:var(--text3);letter-spacing:0.1em;\">ALL NODES · 172.12.10.0/24 · COROSYNC OVER SHARED LAN · NO DEDICATED CLUSTER LINK</div>
+          </div>
+
+        </div>
+      </div>
+      <div class=\"hl-legend\">
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--yellow);\"></div>Network Hardware</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--accent);\"></div>Physical Server</div>
+      </div>
+    </div>";
+        // line 890
+        echo "
+    ";
+        // line 892
+        echo "    <div id=\"hl-ad\" class=\"hl-view\">
+      <div class=\"hl-topo-wrap\">
+        <div class=\"hl-grid\" style=\"padding-bottom:24px;\">
+          <div class=\"hl-row\">
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+
+              <div class=\"hl-ad-node\" onclick=\"hlShow('ad-domain',this)\">
+                <div class=\"hl-ad-name\">cranberrylabs.net</div>
+                <div class=\"hl-ad-sub\">Forest Root Domain · Single DC (violet-dc)</div>
+              </div>
+
+              <div class=\"hl-vline\" style=\"height:24px;\"></div>
+
+              <div class=\"hl-ad-children\">
+                <div class=\"hl-ad-branch\">
+                  <div class=\"hl-ou\" onclick=\"hlShow('ou-groups',this)\">
+                    <div class=\"hl-ou-name\">VGroups</div>
+                    <div class=\"hl-ou-sub\">Security Groups</div>
+                  </div>
+                  <div class=\"hl-leaves\">
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VAdministration</div></div>
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VUsers</div></div>
+                  </div>
+                </div>
+                <div class=\"hl-ad-branch\">
+                  <div class=\"hl-ou\" onclick=\"hlShow('ou-vou',this)\">
+                    <div class=\"hl-ou-name\">VOUs</div>
+                    <div class=\"hl-ou-sub\">User Accounts</div>
+                  </div>
+                  <div class=\"hl-leaves\">
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VAdministration</div></div>
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VUsers</div></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=\"hl-legend\">
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--accent);\"></div>Domain / Forest Root</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--yellow);\"></div>Organizational Unit</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--text2);\"></div>Object (User / Group)</div>
+      </div>
+    </div>";
+        // line 938
+        echo "
+    ";
+        // line 940
+        echo "    <div class=\"hl-detail\" id=\"hl-detail\">
+      <div class=\"hl-detail-inner\" id=\"hl-detail-content\"></div>
+    </div>
+
+    ";
+        // line 945
+        echo "    ";
+        if ($this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", []), "projects", [])) {
+            // line 946
+            echo "    <div class=\"hl-projects\">
+      <div class=\"hl-projects-header\">
+        <div class=\"hl-projects-title\">Projects</div>
+        <div class=\"hl-projects-count\">";
+            // line 949
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, $this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", []), "projects", [])), "html", null, true);
+            echo " entries</div>
+      </div>
+
+      ";
+            // line 952
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", []), "projects", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["project"]) {
+                // line 953
+                echo "      <div class=\"hl-acc-item\" id=\"acc-";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["project"], "id", []), "html", null, true);
+                echo "\">
+        <div class=\"hl-acc-trigger\" onclick=\"hlAccToggle('";
+                // line 954
+                echo twig_escape_filter($this->env, $this->getAttribute($context["project"], "id", []), "html", null, true);
+                echo "')\">
+          <span class=\"hl-acc-arrow\">▶</span>
+          <span class=\"hl-acc-title\">";
+                // line 956
+                echo twig_escape_filter($this->env, $this->getAttribute($context["project"], "title", []), "html", null, true);
+                echo "</span>
+          <div class=\"hl-acc-tags\">
+            ";
+                // line 958
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["project"], "tags", []));
+                foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                    // line 959
+                    echo "            <span class=\"hl-acc-tag\">";
+                    echo twig_escape_filter($this->env, $context["tag"], "html", null, true);
+                    echo "</span>
+            ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 961
+                echo "          </div>
+        </div>
+        <div class=\"hl-acc-body\">
+          <div class=\"hl-acc-inner\">
+
+            <div>
+              <div class=\"hl-acc-section-title\">Overview</div>
+              <div class=\"hl-acc-desc\">";
+                // line 968
+                echo twig_escape_filter($this->env, $this->getAttribute($context["project"], "description", []), "html", null, true);
+                echo "</div>
+            </div>
+
+            <div>
+              <div class=\"hl-acc-section-title\">What I Learned</div>
+              <div class=\"hl-acc-learned\">";
+                // line 973
+                echo twig_escape_filter($this->env, $this->getAttribute($context["project"], "learned", []), "html", null, true);
+                echo "</div>
+            </div>
+
+            ";
+                // line 976
+                if ($this->getAttribute($context["project"], "snippets", [])) {
+                    // line 977
+                    echo "            <div class=\"hl-acc-snippets\">
+              <div class=\"hl-acc-section-title\">Configuration / Code</div>
+              ";
+                    // line 979
+                    $context['_parent'] = $context;
+                    $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["project"], "snippets", []));
+                    foreach ($context['_seq'] as $context["_key"] => $context["snippet"]) {
+                        // line 980
+                        echo "              <div class=\"hl-snippet\">
+                <div class=\"hl-snippet-label\">";
+                        // line 981
+                        echo twig_escape_filter($this->env, $this->getAttribute($context["snippet"], "label", []), "html", null, true);
+                        echo "</div>
+                <pre class=\"hl-snippet-code\">";
+                        // line 982
+                        echo twig_escape_filter($this->env, $this->getAttribute($context["snippet"], "code", []), "html", null, true);
+                        echo "</pre>
+              </div>
+              ";
+                    }
+                    $_parent = $context['_parent'];
+                    unset($context['_seq'], $context['_iterated'], $context['_key'], $context['snippet'], $context['_parent'], $context['loop']);
+                    $context = array_intersect_key($context, $_parent) + $_parent;
+                    // line 985
+                    echo "            </div>
+            ";
+                }
+                // line 987
+                echo "
+          </div>
+        </div>
+      </div>
+      ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['project'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 992
+            echo "
+    </div>
+    ";
+        }
+        // line 995
+        echo "
+  </div>";
+        // line 997
+        echo "</div>";
+        // line 998
+        echo "
+<script>
+const hlData = {
+  internet: {
+    name: 'Internet / WAN', type: 'Upstream',
+    sections: {
+      'Overview': ['ISP connection terminating at the router', 'All inbound traffic enters through port forwarding rules', 'External DNS managed via Cloudflare DDNS'],
+      'Exposure': ['Port 80/443 → violet-http (Caddy reverse proxy)', 'WireGuard port → violet-vpn', 'Game server ports → filament VMs'],
+    },
+    tags: ['NAT', 'Cloudflare', 'DDNS', 'Port Forwarding']
+  },
+  router: {
+    name: 'Router', type: 'Gateway / Layer 3',
+    sections: {
+      'Network Services': ['DHCP server for 172.120.10.0/24 LAN', 'NAT — all hosts share single public IP', 'Port forwarding rules for exposed services'],
+      'DNS & DDNS': ['Cloudflare DDNS client keeps cranberrylabs.net A record current', 'CNAME architecture consolidates all subdomains to one dynamic record', 'Internal DNS resolution handled by violet-dc'],
+    },
+    tags: ['DHCP', 'NAT', 'Port Forwarding', 'DDNS', 'Cloudflare', '172.12.10.1']
+  },
+  switch: {
+    name: 'Unmanaged Switch', type: 'Layer 2',
+    sections: {
+      'Configuration': ['Flat layer 2 switch — no managed features', 'All three Proxmox nodes connect here', 'No VLANs or trunk ports configured'],
+      'Notes': ['Corosync cluster heartbeat runs over this same LAN', 'Future improvement: managed switch for dedicated cluster link and VLAN segmentation'],
+    },
+    tags: ['L2', 'Flat LAN', '172.12.10.0/24']
+  },
+  strand: {
+    name: 'STRAND', type: 'Proxmox VE Node',
+    sections: {
+      'Hosted VMs': ['violet-dc (172.12.10.6) — Domain Controller, ADDS, internal DNS', 'violet-vpn (172.12.10.7) — WireGuard remote access server', 'violet-http (172.12.10.20) — LAMP stack, Grav CMS, Caddy reverse proxy'],
+      'Node Role': ['Primary infrastructure node hosting identity and access services', 'violet-dc provides DNS for all LAN hosts', 'Public-facing web serving and VPN access originate here'],
+    },
+    tags: ['Proxmox VE', 'Debian 12', 'ADDS', 'WireGuard', 'LAMP']
+  },
+  petal: {
+    name: 'PETAL', type: 'Proxmox VE Node',
+    sections: {
+      'Hosted VMs': ['violet-bright (172.12.10.38) — Clean media serving: Jellyfin, Caddy, Sonarr (organizer)', 'violet-pale (172.12.10.65) — Isolated downloads: qBittorrent, Sonarr (indexing), Mullvad WireGuard exit'],
+      'Architecture': ['Bright/pale split deliberately isolates download traffic from serving traffic', 'violet-pale routes all traffic through Mullvad — if VPN drops, downloads stop', 'Caddy on violet-bright handles reverse proxy and SSL for media services'],
+    },
+    tags: ['Docker', 'Jellyfin', 'Caddy', 'Sonarr', 'Mullvad', 'Media Automation']
+  },
+  filament: {
+    name: 'FILAMENT', type: 'Proxmox VE Node',
+    sections: {
+      'Hosted VMs': ['violet-gs (172.12.10.11) — Terraria and Vintage Story via Docker', 'violet-paper (172.12.10.12) — Dedicated Minecraft server'],
+      'Node Role': ['Dedicated game server host — isolated from infrastructure VMs', 'Docker used on violet-gs for easy server lifecycle management'],
+    },
+    tags: ['Docker', 'Terraria', 'Vintage Story', 'Minecraft']
+  },
+  'violet-dc': {
+    name: 'violet-dc', type: 'VM · Domain Controller',
+    sections: {
+      'Services': ['Active Directory Domain Services (ADDS)', 'Internal DNS resolution for cranberrylabs.net', 'Group Policy management', 'Domain-joined machine authentication'],
+      'Details': ['Primary (and only) DC — single-DC domain', 'All LAN hosts point here for DNS', 'Hosts VGroups and VOUs organisational structure'],
+    },
+    tags: ['Windows Server', 'ADDS', 'DNS', 'GPO', '172.12.10.6']
+  },
+  'violet-vpn': {
+    name: 'violet-vpn', type: 'VM · VPN Server',
+    sections: {
+      'Services': ['WireGuard VPN server for remote access', 'Tunnel subnet: 191.70.1.0/24', 'Split tunnel — remote clients reach LAN resources'],
+      'Details': ['Allows secure access to homelab from outside the network', 'WireGuard chosen for performance and simplicity over OpenVPN', 'Port forwarded at router for external UDP connections'],
+    },
+    tags: ['WireGuard', 'VPN', 'Remote Access', '191.70.1.0/24', '172.12.10.7']
+  },
+  'violet-http': {
+    name: 'violet-http', type: 'VM · Web Server',
+    sections: {
+      'Services': ['Apache / LAMP stack', 'Grav CMS — portfolio website', 'Caddy reverse proxy with SSL termination', 'Fail2Ban for brute-force protection'],
+      'Details': [\"Let's Encrypt SSL via Cloudflare DNS challenge\", 'Caddy handles admin access restrictions at proxy level', 'Portfolio at cranberrylabs.net served from this VM'],
+    },
+    tags: ['Apache', 'PHP', 'MariaDB', 'Grav CMS', 'Caddy', \"Let's Encrypt\", '172.12.10.20']
+  },
+  'violet-bright': {
+    name: 'violet-bright', type: 'VM · Media Server (Clean)',
+    sections: {
+      'Services': ['Jellyfin — media streaming server', 'Sonarr — library organisation and renaming', 'Caddy — reverse proxy + SSL for media services', 'DDNS updater — Cloudflare record sync'],
+      'Design Intent': ['Clean half of the bright/pale split architecture', 'Only serves already-downloaded, organised media', 'No direct internet download traffic passes through this VM'],
+    },
+    tags: ['Docker', 'Jellyfin', 'Sonarr', 'Caddy', 'DDNS', '172.12.10.38']
+  },
+  'violet-pale': {
+    name: 'violet-pale', type: 'VM · Download Sandbox',
+    sections: {
+      'Services': ['qBittorrent — torrent client', 'Sonarr — indexing and download management', 'Jackett — torrent indexer aggregator', 'Mullvad WireGuard — all egress routed through VPN exit'],
+      'Design Intent': ['Dirty half of the bright/pale split architecture', 'All traffic exits through Mullvad tunnel — kill switch prevents clearnet leaks', 'If Mullvad is down, downloads pause — not exposed'],
+    },
+    tags: ['Docker', 'qBittorrent', 'Sonarr', 'Jackett', 'Mullvad', 'WireGuard', '172.12.10.65']
+  },
+  'violet-gs': {
+    name: 'violet-gs', type: 'VM · Game Server Host',
+    sections: {
+      'Services': ['Terraria dedicated server (Docker)', 'Vintage Story dedicated server (Docker)', 'Docker Compose for server lifecycle management'],
+      'Details': ['Router ports forwarded for external player connections', 'Isolated on filament away from infrastructure VMs'],
+    },
+    tags: ['Docker', 'Terraria', 'Vintage Story', '172.12.10.11']
+  },
+  'violet-paper': {
+    name: 'violet-paper', type: 'VM · Minecraft Server',
+    sections: {
+      'Services': ['Dedicated Minecraft Java Edition server', 'Separate VM for resource isolation'],
+      'Details': ['Dedicated VM rather than Docker container for resource tuning', 'Port forwarded at router for external access'],
+    },
+    tags: ['Minecraft', 'Java', '172.12.10.12']
+  },
+  'wg-remote': {
+    name: 'WireGuard — Remote Access', type: 'VPN Tunnel',
+    sections: {
+      'Configuration': ['Server: violet-vpn (172.12.10.7)', 'Tunnel subnet: 191.70.1.0/24', 'Split tunnel — LAN traffic over VPN, internet direct', 'UDP port forwarded at router'],
+      'Use Case': ['Secure access to all homelab VMs from outside the network', 'Reaches ADDS, Proxmox web UI, Jellyfin, game servers over encrypted tunnel'],
+    },
+    tags: ['WireGuard', 'Split Tunnel', '191.70.1.0/24', 'Remote Access', 'UDP']
+  },
+  'wg-mullvad': {
+    name: 'WireGuard — Mullvad Exit', type: 'VPN Egress Tunnel',
+    sections: {
+      'Configuration': ['Client: violet-pale (172.12.10.65)', 'All egress from violet-pale routes through Mullvad exit node', 'Kill switch configured — if tunnel drops, VM loses internet'],
+      'Design Rationale': ['Download activity isolated to VM with VPN-only egress', 'Architectural separation from violet-bright prevents cross-contamination'],
+    },
+    tags: ['WireGuard', 'Mullvad', 'Egress', 'Kill Switch', 'Privacy', 'Isolation']
+  },
+  'ad-domain': {
+    name: 'cranberrylabs.net', type: 'AD Forest Root Domain',
+    sections: {
+      'Structure': ['Single-domain forest — cranberrylabs.net', 'One domain controller: violet-dc (172.12.10.6)', 'Windows Server running ADDS, DNS, GPO'],
+      'Custom OUs': ['VGroups — security group organisation', 'VOUs — user account organisation'],
+    },
+    tags: ['ADDS', 'Single Domain', 'Forest Root', 'cranberrylabs.net']
+  },
+  'ou-groups': {
+    name: 'VGroups', type: 'OU · Security Groups',
+    sections: {
+      'Groups': ['VAdministration (elevated permissions group)', 'VUsers → Family (standard household users), Services (service accounts)'],
+      'Purpose': ['Separates admin-level group membership from standard users', 'GPO can be scoped to these OUs for targeted policy application'],
+    },
+    tags: ['Security Groups', 'GPO Scope', 'OU', 'RBAC']
+  },
+  'ou-vou': {
+    name: 'VOUs', type: 'OU · User Accounts',
+    sections: {
+      'Accounts': ['VAdministration (admin accounts)', 'VUsers (personal accounts)'],
+      'Purpose': ['Separates privileged accounts from standard user accounts at OU level', 'Mirrors principle of least privilege; daily use account separate from admin account'],
+    },
+    tags: ['User Accounts', 'Least Privilege', 'OU', 'GPO']
+  },
+};
+
+let hlActive = null;
+let hlActiveEl = null;
+
+function hlSetView(view, btn) {
+  document.querySelectorAll('.hl-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.hl-toggle-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('hl-' + view).classList.add('active');
+  btn.classList.add('active');
+  hlClose();
+}
+
+function hlShow(id, el) {
+  const d = hlData[id];
+  if (!d) return;
+  if (hlActiveEl) hlActiveEl.classList.remove('active');
+  if (hlActive === id) { hlClose(); return; }
+
+  hlActive = id;
+  hlActiveEl = el;
+  el.classList.add('active');
+
+  let html = `<div class=\"hl-detail-header\">
+    <div class=\"hl-detail-name\">\${d.name}</div>
+    <div class=\"hl-detail-type\">\${d.type}</div>
+    <button class=\"hl-detail-close\" onclick=\"hlClose()\">✕ close</button>
+  </div><div class=\"hl-detail-grid\">`;
+
+  Object.entries(d.sections).forEach(([k, items]) => {
+    html += `<div><div class=\"hl-section-title\">\${k}</div><ul class=\"hl-list\">`;
+    items.forEach(i => { html += `<li>\${i}</li>`; });
+    html += `</ul></div>`;
+  });
+
+  html += `</div>`;
+  if (d.tags) {
+    html += `<div class=\"hl-tags\">` + d.tags.map(t => `<span class=\"hl-tag\">\${t}</span>`).join('') + `</div>`;
+  }
+
+  document.getElementById('hl-detail-content').innerHTML = html;
+  const panel = document.getElementById('hl-detail');
+  panel.classList.add('open');
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+}
+
+function hlClose() {
+  if (hlActiveEl) hlActiveEl.classList.remove('active');
+  hlActive = null; hlActiveEl = null;
+  document.getElementById('hl-detail').classList.remove('open');
+}
+function hlAccToggle(id) {
+  const item = document.getElementById('acc-' + id);
+  item.classList.toggle('open');
+}
+</script>
+</div>
+</section>
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "homelab.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  1124 => 998,  1122 => 997,  1119 => 995,  1114 => 992,  1104 => 987,  1100 => 985,  1091 => 982,  1087 => 981,  1084 => 980,  1080 => 979,  1076 => 977,  1074 => 976,  1068 => 973,  1060 => 968,  1051 => 961,  1042 => 959,  1038 => 958,  1033 => 956,  1028 => 954,  1023 => 953,  1019 => 952,  1013 => 949,  1008 => 946,  1005 => 945,  999 => 940,  996 => 938,  949 => 892,  946 => 890,  883 => 828,  880 => 826,  849 => 796,  828 => 776,  807 => 756,  781 => 731,  738 => 689,  730 => 682,  720 => 673,  708 => 662,  704 => 659,  50 => 6,  47 => 5,  40 => 3,  30 => 1,);
+    }
+
+    /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
+    public function getSource()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getSourceContext() instead.', E_USER_DEPRECATED);
+
+        return $this->getSourceContext()->getCode();
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("{% extends 'partials/base.html.twig' %}
+
+{% block body_classes %}{{ parent() }} hl-fullwidth{% endblock %}
+
+{% block body %}
+<section id=\"body-wrapper\" class=\"section\" style=\"padding:0;background:#0a0c0f;\">
+<div style=\"width:100%;max-width:100%;padding:0;margin:0;background:#0a0c0f;\">
+<link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;800&display=swap\" rel=\"stylesheet\">
+
+<style>
+
+/* ── RESET & SCOPE ───────────────────────────────────────────── */
+.hl-page * { box-sizing: border-box; }
+
+/* ── PAGE VARIABLES ──────────────────────────────────────────── */
+.hl-page {
+  --bg:          #0a0c0f;
+  --bg2:         #0f1217;
+  --bg3:         #151a22;
+  --panel:       #111620;
+  --border:      #1e2736;
+  --border2:     #2a3548;
+  --accent:      #00d4ff;
+  --accent2:     #0099cc;
+  --accent-dim:  rgba(0,212,255,0.12);
+  --accent-glow: rgba(0,212,255,0.25);
+  --green:       #00e676;
+  --green-dim:   rgba(0,230,118,0.12);
+  --yellow:      #ffd740;
+  --yellow-dim:  rgba(255,215,64,0.12);
+  --purple:      #ce93d8;
+  --text:        #e8ecf0;
+  --text2:       #8899aa;
+  --text3:       #4a5a6a;
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── NOISE OVERLAY ───────────────────────────────────────────── */
+.hl-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hl-hero {
+  padding: 90px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+.hl-hero-domain {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hl-hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0px;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+.hl-hero-sub {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 1px;
+}
+
+/* ── INNER WRAP ──────────────────────────────────────────────── */
+.hl-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── STATUS BAR ──────────────────────────────────────────────── */
+.hl-status {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  flex-wrap: wrap;
+}
+.hl-stat { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+.hl-dot { width: 6px; height: 6px; border-radius: 50%; }
+.hl-dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); animation: hlpulse 2.5s infinite; }
+.hl-stat-label { color: var(--text3); }
+.hl-stat-val { color: var(--text); font-weight: 500; }
+@keyframes hlpulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+/* ── VIEW TOGGLE ─────────────────────────────────────────────── */
+.hl-toggle {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 32px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px;
+  width: fit-content;
+}
+.hl-toggle-btn {
+  padding: 7px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text3);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+.hl-toggle-btn:hover { color: var(--text2); }
+.hl-toggle-btn.active { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,0.3); }
+
+/* ── TOPO WRAP ───────────────────────────────────────────────── */
+.hl-topo-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 40px 24px;
+  margin-bottom: 20px;
+  position: relative;
+  min-height: 480px;
+}
+
+/* ── TOPO VIEWS ──────────────────────────────────────────────── */
+.hl-view { display: none; }
+.hl-view.active { display: block; }
+
+.hl-grid { display: flex; flex-direction: column; align-items: center; }
+.hl-row  { display: flex; justify-content: center; align-items: center; gap: 24px; position: relative; z-index: 2; margin: 14px 0; }
+.hl-row.nodes { gap: 32px; margin-top: 28px; align-items: flex-start; }
+.hl-vline { width: 1px; background: var(--border2); margin: 0 auto; }
+.hl-subnet { font-size: 9px; color: var(--text3); letter-spacing: 1px; text-align: center; margin: 2px 0; }
+
+/* ── GENERIC NODES ───────────────────────────────────────────── */
+.hl-node {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+.hl-node:hover  { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 20px var(--accent-glow); }
+.hl-node.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 28px var(--accent-glow); background: var(--accent-dim); }
+.hl-node-inner { padding: 10px 14px; }
+.hl-label  { font-size: 12px; font-weight: 700; color: var(--text); white-space: nowrap; letter-spacing: 0px; }
+.hl-sub    { font-size: 10px; color: var(--text3); margin-top: 2px; white-space: nowrap; }
+.hl-ip     { font-size: 9px; color: var(--accent2); margin-top: 3px; font-weight: 500; }
+.hl-badge  {
+  position: absolute; top: -7px; right: 8px;
+  font-size: 8px; font-weight: 700; letter-spacing: 2px;
+  padding: 2px 6px; border-radius: 2px; text-transform: uppercase;
+}
+.badge-gw  { background: var(--yellow-dim); color: var(--yellow); border: 1px solid rgba(255,215,64,0.3); }
+.badge-l2  { background: rgba(100,120,160,0.2); color: #7090c0; border: 1px solid rgba(100,120,160,0.3); }
+
+/* ── PVE NODE CONTAINERS ─────────────────────────────────────── */
+.hl-pve { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.hl-pve-header {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  min-width: 156px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hl-pve-header:hover  { border-color: var(--accent); box-shadow: 0 0 16px var(--accent-glow); }
+.hl-pve-header.active { border-color: var(--accent); background: var(--accent-dim); }
+.hl-pve-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 800; color: var(--accent); letter-spacing: 1px; }
+.hl-pve-sub  { font-size: 9px; color: var(--text3); margin-top: 2px; }
+.hl-vms { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+
+/* ── VM NODES ────────────────────────────────────────────────── */
+.hl-vm {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 156px;
+}
+.hl-vm:hover  { border-color: var(--green); box-shadow: 0 0 12px rgba(0,230,118,0.2); }
+.hl-vm.active { border-color: var(--green); background: var(--green-dim); }
+.hl-vm-name  { font-size: 11px; font-weight: 700; color: var(--text); }
+.hl-vm-role  { font-size: 9px; color: var(--text3); margin-top: 1px; }
+.hl-vm-ip    { font-size: 9px; color: var(--accent2); margin-top: 2px; }
+
+/* ── WIREGUARD TUNNELS ───────────────────────────────────────── */
+.hl-wg {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 14px;
+  background: rgba(206,147,216,0.07);
+  border: 1px dashed rgba(206,147,216,0.3);
+  border-radius: 4px;
+  font-size: 10px; color: var(--purple);
+  cursor: pointer; transition: all 0.2s;
+}
+.hl-wg:hover  { background: rgba(206,147,216,0.13); border-color: var(--purple); }
+.hl-wg.active { background: rgba(206,147,216,0.16); border-color: var(--purple); }
+.hl-wg-name  { font-size: 11px; font-weight: 700; }
+.hl-wg-sub   { font-size: 9px; opacity: 0.7; margin-top: 2px; }
+
+/* ── PHYSICAL VIEW ───────────────────────────────────────────── */
+.hl-hw {
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 10px 16px;
+  text-align: center;
+  min-width: 148px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hl-hw:hover  { border-color: var(--yellow); box-shadow: 0 0 14px var(--yellow-dim); }
+.hl-hw.active { border-color: var(--yellow); background: var(--yellow-dim); }
+.hl-hw-name  { font-size: 12px; font-weight: 700; }
+.hl-hw-sub   { font-size: 9px; color: var(--text3); margin-top: 2px; }
+.hl-hw-spec  { font-size: 9px; color: var(--text2); margin-top: 5px; line-height: 1.6; }
+
+/* ── AD VIEW ─────────────────────────────────────────────────── */
+.hl-ad-node {
+  background: var(--panel);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 9px 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 200px;
+}
+.hl-ad-node:hover  { border-color: var(--accent); }
+.hl-ad-node.active { border-color: var(--accent); background: var(--accent-dim); }
+.hl-ad-name  { font-size: 13px; font-weight: 700; color: var(--accent); }
+.hl-ad-sub   { font-size: 9px; color: var(--text3); margin-top: 2px; }
+
+.hl-ad-children {
+  display: flex; gap: 48px; margin-top: 0;
+  padding-top: 24px; position: relative;
+}
+.hl-ad-children::before {
+  content: ''; position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%); width: 1px; height: 24px; background: var(--border2);
+}
+.hl-ad-branch {
+  display: flex; flex-direction: column; align-items: center; position: relative;
+}
+.hl-ad-branch::before {
+  content: ''; position: absolute; top: -24px; left: 50%;
+  transform: translateX(-50%); width: 1px; height: 24px; background: var(--border2);
+}
+.hl-ou {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 6px 16px;
+  text-align: center;
+  min-width: 140px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hl-ou:hover  { border-color: var(--yellow); }
+.hl-ou.active { border-color: var(--yellow); background: var(--yellow-dim); }
+.hl-ou-name  { font-size: 11px; font-weight: 700; color: var(--yellow); }
+.hl-ou-sub   { font-size: 9px; color: var(--text3); margin-top: 1px; }
+
+.hl-leaves {
+  display: flex; gap: 8px; margin-top: 24px; position: relative;
+}
+.hl-leaves::before {
+  content: ''; position: absolute; top: -24px; left: 50%;
+  transform: translateX(-50%); width: 1px; height: 24px; background: var(--border);
+}
+.hl-leaf {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 3px; padding: 5px 10px; text-align: center;
+  font-size: 10px; color: var(--text2); min-width: 96px;
+}
+.hl-leaf-type { font-size: 8px; color: var(--text3); margin-top: 1px; }
+
+/* ── DETAIL PANEL ────────────────────────────────────────────── */
+.hl-detail {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+.hl-detail.open { max-height: 600px; opacity: 1; }
+.hl-detail-inner { padding: 24px 28px; }
+.hl-detail-header {
+  display: flex; align-items: baseline; gap: 12px;
+  margin-bottom: 16px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.hl-detail-name { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--text); }
+.hl-detail-type { font-size: 10px; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; }
+.hl-detail-close {
+  margin-left: auto; font-size: 10px; color: var(--text3);
+  cursor: pointer; padding: 2px 8px; border: 1px solid var(--border);
+  border-radius: 2px; background: none; font-family: 'JetBrains Mono', monospace;
+  transition: all 0.15s; letter-spacing: 1px;
+}
+.hl-detail-close:hover { color: var(--text); border-color: var(--text3); }
+
+.hl-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.hl-section-title {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 8px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.hl-list { list-style: none; }
+.hl-list li {
+  font-size: 11px; color: var(--text2); padding: 4px 0;
+  display: flex; gap: 8px; align-items: flex-start; line-height: 1.5;
+}
+.hl-list li::before { content: '›'; color: var(--accent); flex-shrink: 0; }
+.hl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.hl-tag {
+  font-size: 9px; padding: 3px 8px; border-radius: 2px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  color: var(--text2); letter-spacing: 1px;
+}
+
+/* ── LEGEND ──────────────────────────────────────────────────── */
+.hl-legend {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  padding: 12px 0; border-top: 1px solid var(--border); margin-top: 4px;
+}
+.hl-legend-item { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--text3); }
+.hl-legend-dot  { width: 8px; height: 8px; border-radius: 1px; }
+
+/* ── PROJECTS SECTION ────────────────────────────────────────── */
+.hl-projects {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.hl-projects-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.hl-projects-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0px;
+}
+.hl-projects-count {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 2px;
+}
+
+/* accordion row */
+.hl-acc-item {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.hl-acc-item:hover { border-color: var(--border2); }
+.hl-acc-item.open  { border-color: var(--accent); }
+
+.hl-acc-trigger {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--panel);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.hl-acc-trigger:hover { background: var(--bg3); }
+.hl-acc-item.open .hl-acc-trigger { background: var(--bg3); }
+
+.hl-acc-arrow {
+  font-size: 10px;
+  color: var(--text3);
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.hl-acc-item.open .hl-acc-arrow { transform: rotate(90deg); color: var(--accent); }
+
+.hl-acc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  flex: 1;
+}
+.hl-acc-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.hl-acc-tag {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  color: var(--text3);
+  letter-spacing: 1px;
+}
+.hl-acc-item.open .hl-acc-tag { border-color: rgba(0,212,255,0.2); color: var(--accent2); }
+
+/* accordion body */
+.hl-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.hl-acc-item.open .hl-acc-body { max-height: 1200px; }
+.hl-acc-inner {
+  padding: 20px 20px 24px 44px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.hl-acc-section-title {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.hl-acc-desc {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+.hl-acc-learned {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+/* code snippet inside accordion */
+.hl-acc-snippets {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+.hl-snippet {
+  margin-bottom: 14px;
+}
+.hl-snippet:last-child { margin-bottom: 0; }
+.hl-snippet-label {
+  font-size: 9px;
+  color: var(--text3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.hl-snippet-code {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-size: 11px;
+  color: #a8d8a0;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .hl-detail-grid { grid-template-columns: 1fr; }
+  .hl-row.nodes   { flex-direction: column; align-items: center; }
+  .hl-ad-children { flex-direction: column; align-items: center; gap: 24px; }
+  .hl-acc-inner   { grid-template-columns: 1fr; padding-left: 20px; }
+  .hl-acc-tags    { display: none; }
+}
+
+/* ── RESPONSIVE FONT SCALING ─────────────────────────────────── */
+@media (min-width: 1280px) {
+          .hl-hero-domain { font-size: 12px; }
+  .hl-hero h1 { font-size: 40px; }
+  .hl-hero-sub { font-size: 12px; }
+  .hl-stat { font-size: 12px; }
+  .hl-toggle-btn { font-size: 12px; }
+  .hl-subnet { font-size: 10px; }
+  .hl-label { font-size: 13px; }
+  .hl-sub { font-size: 11px; }
+  .hl-ip { font-size: 10px; }
+  .hl-badge { font-size: 9px; }
+  .hl-pve-name { font-size: 14px; }
+  .hl-pve-sub { font-size: 10px; }
+  .hl-vm-name { font-size: 12px; }
+  .hl-vm-role { font-size: 10px; }
+  .hl-vm-ip { font-size: 10px; }
+  .hl-wg { font-size: 11px; }
+  .hl-wg-name { font-size: 12px; }
+  .hl-wg-sub { font-size: 10px; }
+  .hl-hw-name { font-size: 13px; }
+  .hl-hw-sub { font-size: 10px; }
+  .hl-hw-spec { font-size: 10px; }
+  .hl-ad-name { font-size: 14px; }
+  .hl-ad-sub { font-size: 10px; }
+  .hl-ou-name { font-size: 12px; }
+  .hl-ou-sub { font-size: 10px; }
+  .hl-leaf { font-size: 11px; }
+  .hl-leaf-type { font-size: 9px; }
+  .hl-detail-name { font-size: 22px; }
+  .hl-detail-type { font-size: 11px; }
+  .hl-detail-close { font-size: 11px; }
+  .hl-section-title { font-size: 10px; }
+  .hl-list li { font-size: 12px; }
+  .hl-tag { font-size: 10px; }
+  .hl-legend-item { font-size: 11px; }
+  .hl-projects-title { font-size: 24px; }
+  .hl-projects-count { font-size: 12px; }
+  .hl-acc-arrow { font-size: 11px; }
+  .hl-acc-title { font-size: 14px; }
+  .hl-acc-tag { font-size: 10px; }
+  .hl-acc-section-title { font-size: 10px; }
+  .hl-acc-desc { font-size: 12px; }
+  .hl-acc-learned { font-size: 12px; }
+  .hl-snippet-label { font-size: 10px; }
+  .hl-snippet-code { font-size: 12px; }
+}
+@media (min-width: 1440px) {
+          .hl-hero-domain { font-size: 13px; }
+  .hl-hero h1 { font-size: 43px; }
+  .hl-hero-sub { font-size: 13px; }
+  .hl-stat { font-size: 13px; }
+  .hl-toggle-btn { font-size: 13px; }
+  .hl-subnet { font-size: 11px; }
+  .hl-label { font-size: 14px; }
+  .hl-sub { font-size: 12px; }
+  .hl-ip { font-size: 11px; }
+  .hl-badge { font-size: 10px; }
+  .hl-pve-name { font-size: 16px; }
+  .hl-pve-sub { font-size: 11px; }
+  .hl-vm-name { font-size: 13px; }
+  .hl-vm-role { font-size: 11px; }
+  .hl-vm-ip { font-size: 11px; }
+  .hl-wg { font-size: 12px; }
+  .hl-wg-name { font-size: 13px; }
+  .hl-wg-sub { font-size: 11px; }
+  .hl-hw-name { font-size: 14px; }
+  .hl-hw-sub { font-size: 11px; }
+  .hl-hw-spec { font-size: 11px; }
+  .hl-ad-name { font-size: 16px; }
+  .hl-ad-sub { font-size: 11px; }
+  .hl-ou-name { font-size: 13px; }
+  .hl-ou-sub { font-size: 11px; }
+  .hl-leaf { font-size: 12px; }
+  .hl-leaf-type { font-size: 10px; }
+  .hl-detail-name { font-size: 24px; }
+  .hl-detail-type { font-size: 12px; }
+  .hl-detail-close { font-size: 12px; }
+  .hl-section-title { font-size: 11px; }
+  .hl-list li { font-size: 13px; }
+  .hl-tag { font-size: 11px; }
+  .hl-legend-item { font-size: 12px; }
+  .hl-projects-title { font-size: 26px; }
+  .hl-projects-count { font-size: 13px; }
+  .hl-acc-arrow { font-size: 12px; }
+  .hl-acc-title { font-size: 16px; }
+  .hl-acc-tag { font-size: 11px; }
+  .hl-acc-section-title { font-size: 11px; }
+  .hl-acc-desc { font-size: 13px; }
+  .hl-acc-learned { font-size: 13px; }
+  .hl-snippet-label { font-size: 11px; }
+  .hl-snippet-code { font-size: 13px; }
+}
+@media (min-width: 1920px) {
+          .hl-hero-domain { font-size: 15px; }
+  .hl-hero h1 { font-size: 49px; }
+  .hl-hero-sub { font-size: 15px; }
+  .hl-stat { font-size: 15px; }
+  .hl-toggle-btn { font-size: 15px; }
+  .hl-subnet { font-size: 12px; }
+  .hl-label { font-size: 16px; }
+  .hl-sub { font-size: 14px; }
+  .hl-ip { font-size: 12px; }
+  .hl-badge { font-size: 11px; }
+  .hl-pve-name { font-size: 18px; }
+  .hl-pve-sub { font-size: 12px; }
+  .hl-vm-name { font-size: 15px; }
+  .hl-vm-role { font-size: 12px; }
+  .hl-vm-ip { font-size: 12px; }
+  .hl-wg { font-size: 14px; }
+  .hl-wg-name { font-size: 15px; }
+  .hl-wg-sub { font-size: 12px; }
+  .hl-hw-name { font-size: 16px; }
+  .hl-hw-sub { font-size: 12px; }
+  .hl-hw-spec { font-size: 12px; }
+  .hl-ad-name { font-size: 18px; }
+  .hl-ad-sub { font-size: 12px; }
+  .hl-ou-name { font-size: 15px; }
+  .hl-ou-sub { font-size: 12px; }
+  .hl-leaf { font-size: 14px; }
+  .hl-leaf-type { font-size: 11px; }
+  .hl-detail-name { font-size: 27px; }
+  .hl-detail-type { font-size: 14px; }
+  .hl-detail-close { font-size: 14px; }
+  .hl-section-title { font-size: 12px; }
+  .hl-list li { font-size: 15px; }
+  .hl-tag { font-size: 12px; }
+  .hl-legend-item { font-size: 14px; }
+  .hl-projects-title { font-size: 30px; }
+  .hl-projects-count { font-size: 15px; }
+  .hl-acc-arrow { font-size: 14px; }
+  .hl-acc-title { font-size: 18px; }
+  .hl-acc-tag { font-size: 12px; }
+  .hl-acc-section-title { font-size: 12px; }
+  .hl-acc-desc { font-size: 15px; }
+  .hl-acc-learned { font-size: 15px; }
+  .hl-snippet-label { font-size: 12px; }
+  .hl-snippet-code { font-size: 15px; }
+}
+</style>
+
+{# ── PAGE WRAPPER ── #}
+<div class=\"hl-page\">
+
+  {# HERO #}
+  <div class=\"hl-hero\">
+    <div class=\"hl-inner\" style=\"padding-bottom:0;\">
+      <div class=\"hl-hero-domain\">cranberrylabs.net / infrastructure</div>
+      <h1>Cranberry Lab</h1>
+      <div class=\"hl-hero-sub\">Proxmox VE Cluster — 3 Nodes</div>
+    </div>
+  </div>
+
+  <div class=\"hl-inner\">
+
+    {# STATUS BAR #}
+    <div class=\"hl-status\">
+      <div class=\"hl-stat\"><div class=\"hl-dot green\"></div><span class=\"hl-stat-label\">Nodes</span><span class=\"hl-stat-val\">3 online</span></div>
+      <div class=\"hl-stat\"><div class=\"hl-dot green\"></div><span class=\"hl-stat-label\">VMs</span><span class=\"hl-stat-val\">7 running</span></div>
+      <div class=\"hl-stat\"><span class=\"hl-stat-label\">LAN</span><span class=\"hl-stat-val\">172.12.10.0/24</span></div>
+      <div class=\"hl-stat\"><span class=\"hl-stat-label\">WireGuard</span><span class=\"hl-stat-val\">191.70.1.0/24</span></div>
+      <div class=\"hl-stat\"><span class=\"hl-stat-label\">Domain</span><span class=\"hl-stat-val\">cranberrylabs.net</span></div>
+    </div>
+
+    {# VIEW TOGGLE #}
+    <div class=\"hl-toggle\">
+      <button class=\"hl-toggle-btn active\" onclick=\"hlSetView('logical',this)\">Logical</button>
+      <button class=\"hl-toggle-btn\" onclick=\"hlSetView('physical',this)\">Physical</button>
+      <button class=\"hl-toggle-btn\" onclick=\"hlSetView('ad',this)\">AD / Directory</button>
+    </div>
+
+    {# ═══════════ LOGICAL VIEW ═══════════ #}
+    <div id=\"hl-logical\" class=\"hl-view active\">
+      <div class=\"hl-topo-wrap\">
+        <div class=\"hl-grid\">
+
+          <div class=\"hl-row\">
+            <div class=\"hl-node\" onclick=\"hlShow('internet',this)\">
+              <div class=\"hl-node-inner\"><div class=\"hl-label\">INTERNET</div><div class=\"hl-sub\">ISP / WAN</div></div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\">
+            <div class=\"hl-node\" onclick=\"hlShow('router',this)\">
+              <div class=\"hl-badge badge-gw\">Gateway</div>
+              <div class=\"hl-node-inner\">
+                <div class=\"hl-label\">Router</div>
+                <div class=\"hl-sub\">DHCP · DDNS · NAT · Port Fwd</div>
+                <div class=\"hl-ip\">172.12.10.1</div>
+              </div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\">
+            <div class=\"hl-node\" onclick=\"hlShow('switch',this)\">
+              <div class=\"hl-badge badge-l2\">L2</div>
+              <div class=\"hl-node-inner\">
+                <div class=\"hl-label\">Unmanaged Switch</div>
+                <div class=\"hl-sub\">172.12.10.0/24 LAN</div>
+              </div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:16px;\"></div>
+          <div class=\"hl-subnet\">172.12.10.0 / 24</div>
+          <div class=\"hl-vline\" style=\"height:8px;\"></div>
+
+          <div class=\"hl-row nodes\">
+
+            {# STRAND #}
+            <div class=\"hl-pve\">
+              <div class=\"hl-pve-header\" onclick=\"hlShow('strand',this)\">
+                <div class=\"hl-pve-name\">STRAND</div>
+                <div class=\"hl-pve-sub\">PVE Node</div>
+              </div>
+              <div class=\"hl-vms\">
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-dc',this)\">
+                  <div class=\"hl-vm-name\">violet-dc</div>
+                  <div class=\"hl-vm-role\">Domain Controller</div>
+                  <div class=\"hl-vm-ip\">172.12.10.6</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-vpn',this)\">
+                  <div class=\"hl-vm-name\">violet-vpn</div>
+                  <div class=\"hl-vm-role\">WireGuard VPN Server</div>
+                  <div class=\"hl-vm-ip\">172.12.10.7</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-http',this)\">
+                  <div class=\"hl-vm-name\">violet-http</div>
+                  <div class=\"hl-vm-role\">HTTP / LAMP Stack</div>
+                  <div class=\"hl-vm-ip\">172.12.10.20</div>
+                </div>
+              </div>
+            </div>
+
+            {# PETAL #}
+            <div class=\"hl-pve\">
+              <div class=\"hl-pve-header\" onclick=\"hlShow('petal',this)\">
+                <div class=\"hl-pve-name\">PETAL</div>
+                <div class=\"hl-pve-sub\">PVE Node</div>
+              </div>
+              <div class=\"hl-vms\">
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-bright',this)\">
+                  <div class=\"hl-vm-name\">violet-bright</div>
+                  <div class=\"hl-vm-role\">Media Serving (Clean)</div>
+                  <div class=\"hl-vm-ip\">172.12.10.38</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-pale',this)\">
+                  <div class=\"hl-vm-name\">violet-pale</div>
+                  <div class=\"hl-vm-role\">Downloads (Isolated)</div>
+                  <div class=\"hl-vm-ip\">172.12.10.65</div>
+                </div>
+              </div>
+            </div>
+
+            {# FILAMENT #}
+            <div class=\"hl-pve\">
+              <div class=\"hl-pve-header\" onclick=\"hlShow('filament',this)\">
+                <div class=\"hl-pve-name\">FILAMENT</div>
+                <div class=\"hl-pve-sub\">PVE Node</div>
+              </div>
+              <div class=\"hl-vms\">
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-gs',this)\">
+                  <div class=\"hl-vm-name\">violet-gs</div>
+                  <div class=\"hl-vm-role\">Game Servers</div>
+                  <div class=\"hl-vm-ip\">172.12.10.11</div>
+                </div>
+                <div class=\"hl-vm\" onclick=\"hlShow('violet-paper',this)\">
+                  <div class=\"hl-vm-name\">violet-paper</div>
+                  <div class=\"hl-vm-role\">Minecraft Server</div>
+                  <div class=\"hl-vm-ip\">172.12.10.12</div>
+                </div>
+              </div>
+            </div>
+
+          </div>{# /nodes row #}
+
+          <div style=\"height:20px;\"></div>
+
+          <div class=\"hl-row\" style=\"gap:14px;flex-wrap:wrap;\">
+            <div class=\"hl-wg\" onclick=\"hlShow('wg-remote',this)\">
+              <span style=\"font-size:16px;\">⬡</span>
+              <div>
+                <div class=\"hl-wg-name\">WireGuard — Remote Access</div>
+                <div class=\"hl-wg-sub\">violet-vpn · 191.70.1.0/24 · Split tunnel</div>
+              </div>
+            </div>
+            <div class=\"hl-wg\" onclick=\"hlShow('wg-mullvad',this)\">
+              <span style=\"font-size:16px;\">⬡</span>
+              <div>
+                <div class=\"hl-wg-name\">WireGuard — Mullvad Exit</div>
+                <div class=\"hl-wg-sub\">violet-pale · Egress only · Download isolation</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class=\"hl-legend\">
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--yellow);\"></div>Network Hardware</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--accent);\"></div>Proxmox Node</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--green);\"></div>Virtual Machine</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--purple);\"></div>WireGuard Tunnel</div>
+      </div>
+    </div>{# /logical #}
+
+    {# ═══════════ PHYSICAL VIEW ═══════════ #}
+    <div id=\"hl-physical\" class=\"hl-view\">
+      <div class=\"hl-topo-wrap\">
+        <div class=\"hl-grid\">
+
+          <div class=\"hl-row\">
+            <div class=\"hl-hw\" onclick=\"hlShow('router',this)\">
+              <div class=\"hl-hw-name\" style=\"color:var(--yellow);\">Router</div>
+              <div class=\"hl-hw-sub\">Gateway / NAT</div>
+              <div class=\"hl-hw-spec\">172.12.10.1<br>DHCP · Port Fwd · DDNS</div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\">
+            <div class=\"hl-hw\" onclick=\"hlShow('switch',this)\">
+              <div class=\"hl-hw-name\" style=\"color:#7090c0;\">Unmanaged Switch</div>
+              <div class=\"hl-hw-sub\">Layer 2</div>
+              <div class=\"hl-hw-spec\">All nodes on flat LAN<br>No VLANs / trunking</div>
+            </div>
+          </div>
+
+          <div class=\"hl-vline\" style=\"height:28px;\"></div>
+
+          <div class=\"hl-row\" style=\"gap:36px;align-items:flex-start;\">
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+              <div class=\"hl-vline\" style=\"height:14px;\"></div>
+              <div class=\"hl-hw\" onclick=\"hlShow('strand',this)\" style=\"min-width:164px;\">
+                <div class=\"hl-hw-name\" style=\"color:var(--accent);\">STRAND</div>
+                <div class=\"hl-hw-sub\">Proxmox VE Node</div>
+                <div class=\"hl-hw-spec\">Debian 12 base<br>3 VMs: DC, VPN, HTTP</div>
+              </div>
+            </div>
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+              <div class=\"hl-vline\" style=\"height:14px;\"></div>
+              <div class=\"hl-hw\" onclick=\"hlShow('petal',this)\" style=\"min-width:164px;\">
+                <div class=\"hl-hw-name\" style=\"color:var(--accent);\">PETAL</div>
+                <div class=\"hl-hw-sub\">Proxmox VE Node</div>
+                <div class=\"hl-hw-spec\">Debian 12 base<br>2 VMs: bright, pale</div>
+              </div>
+            </div>
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+              <div class=\"hl-vline\" style=\"height:14px;\"></div>
+              <div class=\"hl-hw\" onclick=\"hlShow('filament',this)\" style=\"min-width:164px;\">
+                <div class=\"hl-hw-name\" style=\"color:var(--accent);\">FILAMENT</div>
+                <div class=\"hl-hw-sub\">Proxmox VE Node</div>
+                <div class=\"hl-hw-spec\">Debian 12 base<br>2 VMs: gs, paper</div>
+              </div>
+            </div>
+          </div>
+
+          <div style=\"height:20px;text-align:center;padding-top:16px;\">
+            <div style=\"font-size:9px;color:var(--text3);letter-spacing:0.1em;\">ALL NODES · 172.12.10.0/24 · COROSYNC OVER SHARED LAN · NO DEDICATED CLUSTER LINK</div>
+          </div>
+
+        </div>
+      </div>
+      <div class=\"hl-legend\">
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--yellow);\"></div>Network Hardware</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--accent);\"></div>Physical Server</div>
+      </div>
+    </div>{# /physical #}
+
+    {# ═══════════ AD VIEW ═══════════ #}
+    <div id=\"hl-ad\" class=\"hl-view\">
+      <div class=\"hl-topo-wrap\">
+        <div class=\"hl-grid\" style=\"padding-bottom:24px;\">
+          <div class=\"hl-row\">
+            <div style=\"display:flex;flex-direction:column;align-items:center;\">
+
+              <div class=\"hl-ad-node\" onclick=\"hlShow('ad-domain',this)\">
+                <div class=\"hl-ad-name\">cranberrylabs.net</div>
+                <div class=\"hl-ad-sub\">Forest Root Domain · Single DC (violet-dc)</div>
+              </div>
+
+              <div class=\"hl-vline\" style=\"height:24px;\"></div>
+
+              <div class=\"hl-ad-children\">
+                <div class=\"hl-ad-branch\">
+                  <div class=\"hl-ou\" onclick=\"hlShow('ou-groups',this)\">
+                    <div class=\"hl-ou-name\">VGroups</div>
+                    <div class=\"hl-ou-sub\">Security Groups</div>
+                  </div>
+                  <div class=\"hl-leaves\">
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VAdministration</div></div>
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VUsers</div></div>
+                  </div>
+                </div>
+                <div class=\"hl-ad-branch\">
+                  <div class=\"hl-ou\" onclick=\"hlShow('ou-vou',this)\">
+                    <div class=\"hl-ou-name\">VOUs</div>
+                    <div class=\"hl-ou-sub\">User Accounts</div>
+                  </div>
+                  <div class=\"hl-leaves\">
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VAdministration</div></div>
+                    <div class=\"hl-leaf\"><div style=\"color:var(--yellow);font-weight:700;\">VUsers</div></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=\"hl-legend\">
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--accent);\"></div>Domain / Forest Root</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--yellow);\"></div>Organizational Unit</div>
+        <div class=\"hl-legend-item\"><div class=\"hl-legend-dot\" style=\"background:var(--text2);\"></div>Object (User / Group)</div>
+      </div>
+    </div>{# /ad #}
+
+    {# ═══════════ DETAIL PANEL ═══════════ #}
+    <div class=\"hl-detail\" id=\"hl-detail\">
+      <div class=\"hl-detail-inner\" id=\"hl-detail-content\"></div>
+    </div>
+
+    {# ═══════════ PROJECTS SECTION ═══════════ #}
+    {% if page.header.projects %}
+    <div class=\"hl-projects\">
+      <div class=\"hl-projects-header\">
+        <div class=\"hl-projects-title\">Projects</div>
+        <div class=\"hl-projects-count\">{{ page.header.projects | length }} entries</div>
+      </div>
+
+      {% for project in page.header.projects %}
+      <div class=\"hl-acc-item\" id=\"acc-{{ project.id }}\">
+        <div class=\"hl-acc-trigger\" onclick=\"hlAccToggle('{{ project.id }}')\">
+          <span class=\"hl-acc-arrow\">▶</span>
+          <span class=\"hl-acc-title\">{{ project.title }}</span>
+          <div class=\"hl-acc-tags\">
+            {% for tag in project.tags %}
+            <span class=\"hl-acc-tag\">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class=\"hl-acc-body\">
+          <div class=\"hl-acc-inner\">
+
+            <div>
+              <div class=\"hl-acc-section-title\">Overview</div>
+              <div class=\"hl-acc-desc\">{{ project.description }}</div>
+            </div>
+
+            <div>
+              <div class=\"hl-acc-section-title\">What I Learned</div>
+              <div class=\"hl-acc-learned\">{{ project.learned }}</div>
+            </div>
+
+            {% if project.snippets %}
+            <div class=\"hl-acc-snippets\">
+              <div class=\"hl-acc-section-title\">Configuration / Code</div>
+              {% for snippet in project.snippets %}
+              <div class=\"hl-snippet\">
+                <div class=\"hl-snippet-label\">{{ snippet.label }}</div>
+                <pre class=\"hl-snippet-code\">{{ snippet.code }}</pre>
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+    {% endif %}
+
+  </div>{# /hl-inner #}
+</div>{# /hl-page #}
+
+<script>
+const hlData = {
+  internet: {
+    name: 'Internet / WAN', type: 'Upstream',
+    sections: {
+      'Overview': ['ISP connection terminating at the router', 'All inbound traffic enters through port forwarding rules', 'External DNS managed via Cloudflare DDNS'],
+      'Exposure': ['Port 80/443 → violet-http (Caddy reverse proxy)', 'WireGuard port → violet-vpn', 'Game server ports → filament VMs'],
+    },
+    tags: ['NAT', 'Cloudflare', 'DDNS', 'Port Forwarding']
+  },
+  router: {
+    name: 'Router', type: 'Gateway / Layer 3',
+    sections: {
+      'Network Services': ['DHCP server for 172.120.10.0/24 LAN', 'NAT — all hosts share single public IP', 'Port forwarding rules for exposed services'],
+      'DNS & DDNS': ['Cloudflare DDNS client keeps cranberrylabs.net A record current', 'CNAME architecture consolidates all subdomains to one dynamic record', 'Internal DNS resolution handled by violet-dc'],
+    },
+    tags: ['DHCP', 'NAT', 'Port Forwarding', 'DDNS', 'Cloudflare', '172.12.10.1']
+  },
+  switch: {
+    name: 'Unmanaged Switch', type: 'Layer 2',
+    sections: {
+      'Configuration': ['Flat layer 2 switch — no managed features', 'All three Proxmox nodes connect here', 'No VLANs or trunk ports configured'],
+      'Notes': ['Corosync cluster heartbeat runs over this same LAN', 'Future improvement: managed switch for dedicated cluster link and VLAN segmentation'],
+    },
+    tags: ['L2', 'Flat LAN', '172.12.10.0/24']
+  },
+  strand: {
+    name: 'STRAND', type: 'Proxmox VE Node',
+    sections: {
+      'Hosted VMs': ['violet-dc (172.12.10.6) — Domain Controller, ADDS, internal DNS', 'violet-vpn (172.12.10.7) — WireGuard remote access server', 'violet-http (172.12.10.20) — LAMP stack, Grav CMS, Caddy reverse proxy'],
+      'Node Role': ['Primary infrastructure node hosting identity and access services', 'violet-dc provides DNS for all LAN hosts', 'Public-facing web serving and VPN access originate here'],
+    },
+    tags: ['Proxmox VE', 'Debian 12', 'ADDS', 'WireGuard', 'LAMP']
+  },
+  petal: {
+    name: 'PETAL', type: 'Proxmox VE Node',
+    sections: {
+      'Hosted VMs': ['violet-bright (172.12.10.38) — Clean media serving: Jellyfin, Caddy, Sonarr (organizer)', 'violet-pale (172.12.10.65) — Isolated downloads: qBittorrent, Sonarr (indexing), Mullvad WireGuard exit'],
+      'Architecture': ['Bright/pale split deliberately isolates download traffic from serving traffic', 'violet-pale routes all traffic through Mullvad — if VPN drops, downloads stop', 'Caddy on violet-bright handles reverse proxy and SSL for media services'],
+    },
+    tags: ['Docker', 'Jellyfin', 'Caddy', 'Sonarr', 'Mullvad', 'Media Automation']
+  },
+  filament: {
+    name: 'FILAMENT', type: 'Proxmox VE Node',
+    sections: {
+      'Hosted VMs': ['violet-gs (172.12.10.11) — Terraria and Vintage Story via Docker', 'violet-paper (172.12.10.12) — Dedicated Minecraft server'],
+      'Node Role': ['Dedicated game server host — isolated from infrastructure VMs', 'Docker used on violet-gs for easy server lifecycle management'],
+    },
+    tags: ['Docker', 'Terraria', 'Vintage Story', 'Minecraft']
+  },
+  'violet-dc': {
+    name: 'violet-dc', type: 'VM · Domain Controller',
+    sections: {
+      'Services': ['Active Directory Domain Services (ADDS)', 'Internal DNS resolution for cranberrylabs.net', 'Group Policy management', 'Domain-joined machine authentication'],
+      'Details': ['Primary (and only) DC — single-DC domain', 'All LAN hosts point here for DNS', 'Hosts VGroups and VOUs organisational structure'],
+    },
+    tags: ['Windows Server', 'ADDS', 'DNS', 'GPO', '172.12.10.6']
+  },
+  'violet-vpn': {
+    name: 'violet-vpn', type: 'VM · VPN Server',
+    sections: {
+      'Services': ['WireGuard VPN server for remote access', 'Tunnel subnet: 191.70.1.0/24', 'Split tunnel — remote clients reach LAN resources'],
+      'Details': ['Allows secure access to homelab from outside the network', 'WireGuard chosen for performance and simplicity over OpenVPN', 'Port forwarded at router for external UDP connections'],
+    },
+    tags: ['WireGuard', 'VPN', 'Remote Access', '191.70.1.0/24', '172.12.10.7']
+  },
+  'violet-http': {
+    name: 'violet-http', type: 'VM · Web Server',
+    sections: {
+      'Services': ['Apache / LAMP stack', 'Grav CMS — portfolio website', 'Caddy reverse proxy with SSL termination', 'Fail2Ban for brute-force protection'],
+      'Details': [\"Let's Encrypt SSL via Cloudflare DNS challenge\", 'Caddy handles admin access restrictions at proxy level', 'Portfolio at cranberrylabs.net served from this VM'],
+    },
+    tags: ['Apache', 'PHP', 'MariaDB', 'Grav CMS', 'Caddy', \"Let's Encrypt\", '172.12.10.20']
+  },
+  'violet-bright': {
+    name: 'violet-bright', type: 'VM · Media Server (Clean)',
+    sections: {
+      'Services': ['Jellyfin — media streaming server', 'Sonarr — library organisation and renaming', 'Caddy — reverse proxy + SSL for media services', 'DDNS updater — Cloudflare record sync'],
+      'Design Intent': ['Clean half of the bright/pale split architecture', 'Only serves already-downloaded, organised media', 'No direct internet download traffic passes through this VM'],
+    },
+    tags: ['Docker', 'Jellyfin', 'Sonarr', 'Caddy', 'DDNS', '172.12.10.38']
+  },
+  'violet-pale': {
+    name: 'violet-pale', type: 'VM · Download Sandbox',
+    sections: {
+      'Services': ['qBittorrent — torrent client', 'Sonarr — indexing and download management', 'Jackett — torrent indexer aggregator', 'Mullvad WireGuard — all egress routed through VPN exit'],
+      'Design Intent': ['Dirty half of the bright/pale split architecture', 'All traffic exits through Mullvad tunnel — kill switch prevents clearnet leaks', 'If Mullvad is down, downloads pause — not exposed'],
+    },
+    tags: ['Docker', 'qBittorrent', 'Sonarr', 'Jackett', 'Mullvad', 'WireGuard', '172.12.10.65']
+  },
+  'violet-gs': {
+    name: 'violet-gs', type: 'VM · Game Server Host',
+    sections: {
+      'Services': ['Terraria dedicated server (Docker)', 'Vintage Story dedicated server (Docker)', 'Docker Compose for server lifecycle management'],
+      'Details': ['Router ports forwarded for external player connections', 'Isolated on filament away from infrastructure VMs'],
+    },
+    tags: ['Docker', 'Terraria', 'Vintage Story', '172.12.10.11']
+  },
+  'violet-paper': {
+    name: 'violet-paper', type: 'VM · Minecraft Server',
+    sections: {
+      'Services': ['Dedicated Minecraft Java Edition server', 'Separate VM for resource isolation'],
+      'Details': ['Dedicated VM rather than Docker container for resource tuning', 'Port forwarded at router for external access'],
+    },
+    tags: ['Minecraft', 'Java', '172.12.10.12']
+  },
+  'wg-remote': {
+    name: 'WireGuard — Remote Access', type: 'VPN Tunnel',
+    sections: {
+      'Configuration': ['Server: violet-vpn (172.12.10.7)', 'Tunnel subnet: 191.70.1.0/24', 'Split tunnel — LAN traffic over VPN, internet direct', 'UDP port forwarded at router'],
+      'Use Case': ['Secure access to all homelab VMs from outside the network', 'Reaches ADDS, Proxmox web UI, Jellyfin, game servers over encrypted tunnel'],
+    },
+    tags: ['WireGuard', 'Split Tunnel', '191.70.1.0/24', 'Remote Access', 'UDP']
+  },
+  'wg-mullvad': {
+    name: 'WireGuard — Mullvad Exit', type: 'VPN Egress Tunnel',
+    sections: {
+      'Configuration': ['Client: violet-pale (172.12.10.65)', 'All egress from violet-pale routes through Mullvad exit node', 'Kill switch configured — if tunnel drops, VM loses internet'],
+      'Design Rationale': ['Download activity isolated to VM with VPN-only egress', 'Architectural separation from violet-bright prevents cross-contamination'],
+    },
+    tags: ['WireGuard', 'Mullvad', 'Egress', 'Kill Switch', 'Privacy', 'Isolation']
+  },
+  'ad-domain': {
+    name: 'cranberrylabs.net', type: 'AD Forest Root Domain',
+    sections: {
+      'Structure': ['Single-domain forest — cranberrylabs.net', 'One domain controller: violet-dc (172.12.10.6)', 'Windows Server running ADDS, DNS, GPO'],
+      'Custom OUs': ['VGroups — security group organisation', 'VOUs — user account organisation'],
+    },
+    tags: ['ADDS', 'Single Domain', 'Forest Root', 'cranberrylabs.net']
+  },
+  'ou-groups': {
+    name: 'VGroups', type: 'OU · Security Groups',
+    sections: {
+      'Groups': ['VAdministration (elevated permissions group)', 'VUsers → Family (standard household users), Services (service accounts)'],
+      'Purpose': ['Separates admin-level group membership from standard users', 'GPO can be scoped to these OUs for targeted policy application'],
+    },
+    tags: ['Security Groups', 'GPO Scope', 'OU', 'RBAC']
+  },
+  'ou-vou': {
+    name: 'VOUs', type: 'OU · User Accounts',
+    sections: {
+      'Accounts': ['VAdministration (admin accounts)', 'VUsers (personal accounts)'],
+      'Purpose': ['Separates privileged accounts from standard user accounts at OU level', 'Mirrors principle of least privilege; daily use account separate from admin account'],
+    },
+    tags: ['User Accounts', 'Least Privilege', 'OU', 'GPO']
+  },
+};
+
+let hlActive = null;
+let hlActiveEl = null;
+
+function hlSetView(view, btn) {
+  document.querySelectorAll('.hl-view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.hl-toggle-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('hl-' + view).classList.add('active');
+  btn.classList.add('active');
+  hlClose();
+}
+
+function hlShow(id, el) {
+  const d = hlData[id];
+  if (!d) return;
+  if (hlActiveEl) hlActiveEl.classList.remove('active');
+  if (hlActive === id) { hlClose(); return; }
+
+  hlActive = id;
+  hlActiveEl = el;
+  el.classList.add('active');
+
+  let html = `<div class=\"hl-detail-header\">
+    <div class=\"hl-detail-name\">\${d.name}</div>
+    <div class=\"hl-detail-type\">\${d.type}</div>
+    <button class=\"hl-detail-close\" onclick=\"hlClose()\">✕ close</button>
+  </div><div class=\"hl-detail-grid\">`;
+
+  Object.entries(d.sections).forEach(([k, items]) => {
+    html += `<div><div class=\"hl-section-title\">\${k}</div><ul class=\"hl-list\">`;
+    items.forEach(i => { html += `<li>\${i}</li>`; });
+    html += `</ul></div>`;
+  });
+
+  html += `</div>`;
+  if (d.tags) {
+    html += `<div class=\"hl-tags\">` + d.tags.map(t => `<span class=\"hl-tag\">\${t}</span>`).join('') + `</div>`;
+  }
+
+  document.getElementById('hl-detail-content').innerHTML = html;
+  const panel = document.getElementById('hl-detail');
+  panel.classList.add('open');
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+}
+
+function hlClose() {
+  if (hlActiveEl) hlActiveEl.classList.remove('active');
+  hlActive = null; hlActiveEl = null;
+  document.getElementById('hl-detail').classList.remove('open');
+}
+function hlAccToggle(id) {
+  const item = document.getElementById('acc-' + id);
+  item.classList.toggle('open');
+}
+</script>
+</div>
+</section>
+{% endblock %}
+", "homelab.html.twig", "/var/www/html/user/themes/quark/templates/homelab.html.twig");
+    }
+}

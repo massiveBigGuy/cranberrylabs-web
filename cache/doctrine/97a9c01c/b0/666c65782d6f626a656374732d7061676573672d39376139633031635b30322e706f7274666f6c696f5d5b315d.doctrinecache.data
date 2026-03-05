@@ -1,0 +1,16 @@
+1772739223
+O:39:"Grav\Common\Flex\Types\Pages\PageObject":4:{s:4:"type";s:5:"pages";s:3:"key";s:9:"portfolio";s:8:"elements";a:4:{s:4:"root";b:0;s:6:"header";a:3:{s:5:"title";s:9:"Portfolio";s:5:"login";a:1:{s:26:"visibility_requires_access";b:0;}s:7:"content";a:2:{s:5:"items";a:1:{i:0;s:14:"@self.children";}s:5:"order";a:2:{s:2:"by";s:6:"folder";s:3:"dir";s:3:"asc";}}}s:11:"frontmatter";s:155:"title: Portfolio
+login:
+    visibility_requires_access: false
+content:
+    items:
+        - '@self.children'
+    order:
+        by: folder
+        dir: asc";s:8:"markdown";s:143:"<style>
+body {
+    background-color: #E6E6FA;
+}
+</style>
+
+This portion of the website will be dedicated to a portfolio or several portfolio(s).";}s:7:"storage";a:7:{s:3:"key";s:9:"portfolio";s:11:"storage_key";s:12:"02.portfolio";s:8:"template";s:9:"portfolio";s:17:"storage_timestamp";i:1772679583;s:8:"markdown";a:1:{s:0:"";a:1:{s:9:"portfolio";i:1772679583;}}s:8:"children";a:3:{s:22:"01.professional-resume";b:0;s:17:"02.academic-works";b:0;s:11:"03.home-lab";b:0;}s:8:"checksum";s:32:"1328cf7409b00aa0f069756212bdad5b";}}

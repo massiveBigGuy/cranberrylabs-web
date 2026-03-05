@@ -1,0 +1,9 @@
+version: '1.2'
+timestamp: 1771393843
+count: 1
+index:
+  joladmin:
+    storage_key: joladmin
+    storage_timestamp: 1771393843
+    key: joladmin
+    email: sbfevreau@hotmail.com

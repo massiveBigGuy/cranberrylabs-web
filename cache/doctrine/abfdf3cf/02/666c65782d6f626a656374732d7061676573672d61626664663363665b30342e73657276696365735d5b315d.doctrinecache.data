@@ -1,0 +1,12 @@
+1772692251
+O:39:"Grav\Common\Flex\Types\Pages\PageObject":4:{s:4:"type";s:5:"pages";s:3:"key";s:8:"services";s:8:"elements";a:4:{s:4:"root";b:0;s:6:"header";a:1:{s:5:"title";s:8:"Services";}s:11:"frontmatter";s:15:"title: Services";s:8:"markdown";s:256:"<style>
+body {
+    background-color: #E6E6FA;
+}
+</style>
+
+## Services Hosted by Cranberry Labs:
+
+* ### [Minecraft](https://web.cranberrylabs.net//services/minecraft)
+* ### [Vintage Story](https://web.cranberrylabs.net/services/vintage-story)
+* ### Jellyfin";}s:7:"storage";a:7:{s:3:"key";s:8:"services";s:11:"storage_key";s:11:"04.services";s:8:"template";s:7:"default";s:17:"storage_timestamp";i:1771919031;s:8:"markdown";a:1:{s:0:"";a:1:{s:7:"default";i:1771919031;}}s:8:"children";a:2:{s:9:"minecraft";b:0;s:13:"vintage-story";b:0;}s:8:"checksum";s:32:"44bd2e002887fd27742256872b3cdb8a";}}

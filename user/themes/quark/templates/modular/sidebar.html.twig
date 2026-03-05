@@ -1,0 +1,19 @@
+<section class="section modular-text bg-gray">
+    <section class="container {{ grid_size }}">
+        <div class="columns">
+            <div class="column col-12">
+                <h3>{{ page.title }}</h3>
+                
+                <ul>
+                {% for post in page.parent.children.order('date', 'desc') %}
+                    {% if post.template == 'default' and not post.modular %}
+                    <li>
+                        <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date|date('M d, Y') }}
+                    </li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>

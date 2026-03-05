@@ -1,0 +1,62 @@
+<?php
+return [
+    '@class' => 'Grav\\Common\\File\\CompiledMarkdownFile',
+    'filename' => '/var/www/html/user/pages/03.ornithology/_main/default.md',
+    'modified' => 1770175786,
+    'size' => 4307,
+    'data' => [
+        'header' => [
+            'title' => 'Main Content',
+            'template' => 'modular/text'
+        ],
+        'frontmatter' => 'title: Main Content
+template: modular/text',
+        'markdown' => '## Meet the Flockers:
+### Samwise
+
+Meet Sam, a violet budgerigar with a heart of gold. He loves flying, millet, and finding new things. He\'s always exploring new areas and finding new ways to get himself in trouble. Sam was born in early 2025 and serves as a primary source of motivation for Cranberry Labs staff.
+
+<div style="display: flex; overflow-x: auto; gap: 15px; padding: 10px 0; align-items: center;">
+  <img src="/user/pages/03.ornithology/sam-first-day.jpg" alt="Sam First Day" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-on-bars.jpg" alt="Sam On Bars" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/baby-sam-near-ladder.jpg" alt="Baby Sam Near Ladder" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-avidreader.jpg" alt="Sam Avid Reader" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-baby-sam.jpg" alt="Sam Baby Sam" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-crazy.jpg" alt="Sam Crazy" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-floor-baby.jpg" alt="Sam Floor Baby" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-it-specialist.jpg" alt="Sam IT Specialist" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-new-friend.jpg" alt="Sam New Friend" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/sam-solo-top.jpg" alt="Sam Solo Top" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/samsleepy.jpg" alt="SamSleepy" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/samsnoozin.jpg" alt="SamSnoozin" style="height: 700px; width: auto; flex-shrink: 0;">
+</div>
+
+### August
+
+August is a beautiful albino budgerigar with a light blue underbelly. August was surrendered by someone who could not care for him any longer after about a year, and so he joined our flock in late 2025. He\'s cautious and careful, but has a beautiful heart.
+
+<div style="display: flex; gap: 20px;">
+  <img src="/user/pages/03.ornithology/august-solo-nearladder.jpg" alt="August Solo Near ladder" style="width: 48%;">
+  <img src="/user/pages/03.ornithology/august-smbranch-solo.jpg" alt="August Small Branch solo" style="width: 48%;">
+</div>
+
+
+### Flock
+
+Some images of the boys playing in their habitat.
+
+<div style="display: flex; overflow-x: auto; gap: 15px; padding: 10px 0; align-items: center;">
+  <img src="/user/pages/03.ornithology/duo-bestfriends.jpg" alt="Duo Best Friends" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-cute-weirdcamera.jpg" alt="Duo Cute Camera" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-chill-sit.jpg" alt="Duo Chill Sit" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-in-morning.jpg" alt="Duo In Morning" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-late-night-sit.jpg" alt="Duo Late Night Sit" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-on-house.jpg" alt="Duo On House" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-on-perch-blankbg.jpg" alt="Duo On Perch BlankBG" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-on-perch-toy.jpg" alt="Duo On Perch Toy" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-sleepyborbs.jpg" alt="Duo Sleepyborbs" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-top-friends.jpg" alt="Duo Top Friends" style="height: 700px; width: auto; flex-shrink: 0;">
+  <img src="/user/pages/03.ornithology/duo-whats-that.jpg" alt="Duo What\'s That" style="height: 700px; width: auto; flex-shrink: 0;">
+</div>'
+    ]
+];
