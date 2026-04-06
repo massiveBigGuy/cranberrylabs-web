@@ -500,14 +500,8 @@ body.template-default .page-content {
 
 /* About band */
 .resume-about {
-    background: #ffffff;
-    padding: 2.5rem 1rem;
-    border-bottom: 1px solid #e8eaf6;
-}
-
-.resume-about .container {
-    max-width: 860px;
-    margin: 0 auto;
+    padding: 2rem 2rem 2.5rem;
+    border-bottom: 1px solid #d4d8f0;
 }
 
 .resume-about-heading {
