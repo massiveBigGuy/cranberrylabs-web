@@ -1,0 +1,25 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<div class="services-page">
+
+    <div class="services-hero">
+        <div class="container">
+            <h1 class="services-hero-title">Services</h1>
+            <p class="services-hero-sub">Things I host.</p>
+        </div>
+    </div>
+
+    {% if page.header.services %}
+    <div class="services-banners">
+        {% for service in page.header.services %}
+        <div class="services-banner">
+            <h2 class="services-banner-name">{{ service.name }}</h2>
+            <p class="services-banner-desc">{{ service.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}

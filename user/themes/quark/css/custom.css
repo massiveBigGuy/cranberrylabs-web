@@ -686,6 +686,92 @@ body.template-default .page-content {
 }
 
 /* =====================
+   Services Page
+   ===================== */
+
+.services-page {
+    width: 100%;
+    max-width: 100%;
+}
+
+.services-hero {
+    background: linear-gradient(135deg, #2c2f4a 0%, #3b3f6e 60%, #4a3f6b 100%);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.services-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.services-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, #e8eaf6);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.services-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.services-hero-title {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.services-hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.services-banners {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.services-banner {
+    padding: 2.5rem 2rem;
+    border-bottom: 1px solid #d4d8f0;
+}
+
+.services-banner:nth-child(even) {
+    background: #ffffff;
+}
+
+.services-banner-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.4rem;
+}
+
+.services-banner-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+}
+
+/* =====================
    Academic Works
    ===================== */
 

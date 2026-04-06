@@ -1,15 +1,12 @@
 ---
 title: Services
+template: services
+
+services:
+  - name: "Minecraft"
+    description: "Java Edition survival multiplayer server."
+  - name: "Vintage Story"
+    description: "Moddable open-world survival game server."
+  - name: "Jellyfin"
+    description: "Open-source media streaming server."
 ---
-
-<style>
-body {
-    background-color: #E6E6FA;
-}
-</style>
-
-## Services Hosted by Cranberry Labs:
-
-* ### [Minecraft](https://web.cranberrylabs.net//services/minecraft)
-* ### [Vintage Story](https://web.cranberrylabs.net/services/vintage-story)
-* ### Jellyfin
