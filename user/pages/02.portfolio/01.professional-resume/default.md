@@ -21,7 +21,7 @@ skills:
   - category: "Cloud"
     items: ["AWS", "Azure", "Linode"]
   - category: "Automation"
-	items: ["PowerShell", "Bash scripting", "Python"]
+	  items: ["PowerShell", "Bash scripting", "Python"]
   - category: "Relational Database"
     items: ["mariaDB, SQL, PostgreSQL"]
 
@@ -35,17 +35,16 @@ certifications:
 experience:
   - title: "Fibre Optic Technician"
     company: "Bell Technical Solutions"
-    period: "2021 — Present"
+    period: "2023 — Present"
     points:
-      - "Responsibilities include installation and repair of fiber optic FTTH internet, IPTV, and home phone services, installing for the future to keep the network clean."
-      - "Configuration of gateway modems, fiber terminals, central splitting points, precise splice connections to ensure maximum uptime."
-      - "Technical knowledge of common structures to run compliant cable, operational safety practices, equipment, and training to handle heights, including the use of ladders to climb telephone poles, strands, homes and other small structures. Working with safety around telecom, electrical, natural gas and other public infrastructure equipment in all weather conditions."
-      - "Responsibility for company equipment including vehicles, tools, other inventory; completing documentation of equipment and manual upkeep of inventory for assigned vehicles. Maintenance and upkeep of personal inventory and assigned tools."
+      - "Installing, configuring, and repairing fiber optic FTTH networks — internet, IPTV, and home phone — including gateway modems, fiber terminals, central splitting points, and copper/fiber splicing."
+      - "Operates across residential structures, MDUs, telephone poles, and public infrastructure in all weather conditions with full compliance to safety standards."
+      - "Applies end-to-end network knowledge to troubleshoot and resolve service deficiencies efficiently."
   - title: "Security Guard"
     company: "Paragon Security"
     period: "2020 — 2023"
     points:
-	  - "At healthcare sites such as Ontario Shores and Lakeridge Health, to education facilities such as Durham College and Ontario Tech University"
+	    - "At healthcare sites such as Ontario Shores and Lakeridge Health, to education facilities such as Durham College and Ontario Tech University"
       - "Worked with access control systems and fire panels, performed monitoring and footage review, responded to incidents, performed physical patrols of the campus, coordinated & responded with emergency services."
 
 education:
