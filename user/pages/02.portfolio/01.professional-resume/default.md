@@ -21,7 +21,7 @@ skills:
   - category: "Cloud"
     items: ["AWS", "Azure", "Linode"]
   - category: "Automation"
-	  items: ["PowerShell", "Bash scripting", "Python"]
+    items: ["PowerShell", "Bash scripting", "Python"]
   - category: "Relational Database"
     items: ["mariaDB, SQL, PostgreSQL"]
 
@@ -44,7 +44,7 @@ experience:
     company: "Paragon Security"
     period: "2020 — 2023"
     points:
-	    - "At healthcare sites such as Ontario Shores and Lakeridge Health, to education facilities such as Durham College and Ontario Tech University"
+      - "At healthcare sites such as Ontario Shores and Lakeridge Health, to education facilities such as Durham College and Ontario Tech University"
       - "Worked with access control systems and fire panels, performed monitoring and footage review, responded to incidents, performed physical patrols of the campus, coordinated & responded with emergency services."
 
 education:
