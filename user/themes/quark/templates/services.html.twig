@@ -14,6 +14,11 @@
     <div class="services-banners">
         {% for service in page.header.services %}
         <div class="services-banner">
+            <div class="services-banner-img{% if not service.image %} services-banner-img--empty{% endif %}">
+                {% if service.image %}
+                <img src="{{ page.media[service.image].url }}" alt="{{ service.name }}">
+                {% endif %}
+            </div>
             <h2 class="services-banner-name">{{ service.name }}</h2>
             <p class="services-banner-desc">{{ service.description }}</p>
         </div>
