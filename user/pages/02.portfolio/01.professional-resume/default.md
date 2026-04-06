@@ -9,7 +9,11 @@ contact:
   linkedin: "https://www.linkedin.com/in/spencer-fevreau-tech/"
   github: "https://github.com/massiveBigGuy"
 
-summary: "Telecom professional and computer systems/cybersecurity student."
+summary: "Telecom professional and systems administration student with a passion for cybersecurity and AI."
+
+about: |
+  I'm a Computer Systems Technology student with three years of hands-on experience installing, troubleshooting and maintaining fiber optic networks and nearly a decade of excellence in customer facing roles. My technical experience includes Microsoft Active Directory, DNS, DHCP, virtualization with environments like Proxmox and VMWare ESXi in lab & homelab environments, and Linux server administration across Debian, Alpine, and Ubuntu, deployed in lab and homelab environments. I've also used Kali for penetration testing and configuration verification on major projects.
+  I get the most satisfaction from resolving tough technical challenges and building systems that deliver results."
 
 skills:
   - category: "Networking & Infrastructure"

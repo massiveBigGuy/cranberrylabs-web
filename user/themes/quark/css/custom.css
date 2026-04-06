@@ -498,6 +498,35 @@ body.template-default .page-content {
     color: #ffffff;
 }
 
+/* About band */
+.resume-about {
+    background: #ffffff;
+    padding: 2.5rem 1rem;
+    border-bottom: 1px solid #e8eaf6;
+}
+
+.resume-about .container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.resume-about-heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #3b3f6e;
+    margin-bottom: 0.8rem;
+}
+
+.resume-about-body {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    white-space: pre-line;
+    margin: 0;
+}
+
 /* Layout */
 .resume-container {
     padding-bottom: 4rem;

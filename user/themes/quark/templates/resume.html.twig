@@ -16,6 +16,15 @@
         </div>
     </div>
 
+    {% if page.header.about %}
+    <div class="resume-about">
+        <div class="container">
+            <h2 class="resume-about-heading">About</h2>
+            <p class="resume-about-body">{{ page.header.about }}</p>
+        </div>
+    </div>
+    {% endif %}
+
     <div class="resume-container">
         <div class="columns">
 
