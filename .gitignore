@@ -20,3 +20,11 @@ SECURITY.md
 # OS junk
 .DS_Store
 Thumbs.db
+
+# All images
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.svg
