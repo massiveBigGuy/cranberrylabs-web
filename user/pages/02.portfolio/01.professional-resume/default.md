@@ -9,10 +9,10 @@ contact:
   linkedin: "https://www.linkedin.com/in/spencer-fevreau-tech/"
   github: "https://github.com/massiveBigGuy"
 
-summary: "Telecom professional and systems administration student with a passion for building systems, troubleshooting networks, and working in the frontier with AI."
+summary: "Telecom professional and systems administration student with a passion for building systems, troubleshooting networks, and working on the frontier with AI."
 
 about: |
-  I'm a Computer Systems Technology student with three years of hands-on experience installing, troubleshooting and maintaining fiber optic networks and nearly a decade of excellence in customer facing roles. My technical experience includes Microsoft Active Directory, DNS, DHCP, virtualization with environments like Proxmox and VMWare ESXi in lab & homelab environments, and Linux server administration across Debian, Alpine, and Ubuntu, deployed in lab and homelab environments. I've also used Kali for penetration testing and configuration verification on major projects. I have plenty of experience in the datacentre, performing cabling duties and following cut-sheets is my day-to-day.
+  I'm a Computer Systems Technology student with three years of hands-on experience installing, troubleshooting and maintaining fibre optic networks and nearly a decade of excellence in customer facing roles. My technical experience includes Microsoft Active Directory, DNS, DHCP, virtualization with environments like Proxmox and VMWare ESXi in lab & homelab environments, and Linux server administration across Debian, Alpine, and Ubuntu, deployed in lab and homelab environments. I've also used Kali for penetration testing and configuration verification on major projects. I have plenty of experience in the datacentre, performing cabling duties and following cut-sheets is my day-to-day.
   I get the most satisfaction from resolving tough technical challenges and building systems that deliver results.
 
 skills:
@@ -48,9 +48,9 @@ experience:
     company: "Bell Technical Solutions"
     period: "2023 — Present"
     points:
-      - "Installing, configuring, and repairing fiber optic FTTH networks — internet, IPTV, and home phone — including gateway modems, fiber terminals, central splitting points, and copper/fiber splicing."
-      - "Operates across residential structures, MDUs, telephone poles, and public infrastructure in all weather conditions with full compliance to safety standards."
-      - "Applies end-to-end network knowledge to troubleshoot and resolve service deficiencies efficiently."
+      - "Installing, configuring, and repairing fibre optic FTTH networks — internet, IPTV, and home phone — including gateway modems, fibre terminals, central splitting points, and copper/fibre splicing."
+      - "Working with customers to neatly cable and configure their home networks for custom needs in all environments, rain or shine."
+      - "Operating across residential structures, MDUs, telephone poles, and public infrastructure with full compliance to safety standards. Applying end-to-end network knowledge to troubleshoot and resolve service outages and instability efficiently."
   - title: "Security Guard"
     company: "Paragon Security"
     period: "2020 — 2023"
