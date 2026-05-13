@@ -114,13 +114,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const welcome = document.getElementById('academic-welcome');
     const categoryHeaders = document.querySelectorAll('.academic-category-header');
 
+    function selectProject(projectId) {
+        welcome.style.display = 'none';
+        panels.forEach(function (p) { p.classList.remove('active'); });
+        items.forEach(function (i) { i.classList.remove('active'); });
+
+        const panel = document.getElementById('project-' + projectId);
+        const sidebarItem = document.querySelector('.academic-sidebar-item[data-project="' + projectId + '"]');
+        if (!panel || !sidebarItem) return;
+
+        panel.classList.add('active');
+        sidebarItem.classList.add('active');
+
+        // Ensure the parent category is expanded
+        const categoryItems = sidebarItem.closest('.academic-category-items');
+        if (categoryItems && categoryItems.classList.contains('collapsed')) {
+            categoryItems.classList.remove('collapsed');
+            const arrow = categoryItems.previousElementSibling.querySelector('.academic-category-arrow');
+            if (arrow) arrow.classList.remove('rotated');
+        }
+    }
+
     // Category expand/collapse
     categoryHeaders.forEach(function (header) {
         header.addEventListener('click', function () {
             const id = this.getAttribute('data-category');
-            const items = document.getElementById('cat-' + id);
+            const catItems = document.getElementById('cat-' + id);
             const arrow = this.querySelector('.academic-category-arrow');
-            items.classList.toggle('collapsed');
+            catItems.classList.toggle('collapsed');
             arrow.classList.toggle('rotated');
         });
     });
@@ -129,21 +150,14 @@ document.addEventListener('DOMContentLoaded', function () {
     items.forEach(function (item) {
         item.addEventListener('click', function () {
             const projectId = this.getAttribute('data-project');
-
-            // Hide welcome
-            welcome.style.display = 'none';
-
-            // Hide all panels
-            panels.forEach(function (p) { p.classList.remove('active'); });
-
-            // Deactivate all sidebar items
-            items.forEach(function (i) { i.classList.remove('active'); });
-
-            // Show selected
-            document.getElementById('project-' + projectId).classList.add('active');
-            this.classList.add('active');
+            sessionStorage.setItem('academicProject', projectId);
+            selectProject(projectId);
         });
     });
+
+    // Restore last selected project
+    const saved = sessionStorage.getItem('academicProject');
+    if (saved) selectProject(saved);
 
 });
 </script>

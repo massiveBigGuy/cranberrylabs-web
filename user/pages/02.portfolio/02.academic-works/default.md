@@ -5,6 +5,53 @@ summary: 'A collection of coursework, projects, and academic achievements from m
 header_image: academic.jpg
 categories:
     -
+        name: Internship
+        id: internship
+        projects:
+            -
+                id: in-1
+                title: 'Emergency Call Centre Network Refresh'
+                tags:
+                    - 'Winter 2026'
+                    - Networking
+                    - Hands-On
+                    - Cisco
+                description: 'Worked with Cisco devices such as Cisco ASR 1000 series routers, Catalyst 9000 series switches, and older 6500 Chassis. Worked with infrastructure specialists to refit the call centre datacentre for the modern day, and reduce the footprint of the network infrastructure with more modern efficient hardware. Tasks included imaging switches, configuring OOB Opengear devices, cabling and racking new equipment.'
+                learned: 'Working alongside infrastructure professionals taught me the standards to which work must be done to acheive the best outcomes. I also learned about scoping a project, having goals in mind, and understanding when an additional task might take too long to be feasible.'
+                screenshots:
+                  - "in1-screenshot1.jpg"
+                  - "in1-screenshot2.jpg"
+                  - "in1-screenshot3.jpg"
+                code: ''
+            -
+                id: in-2
+                title: '3D Printing Logo Art'
+                tags:
+                    - 'Winter 2026'
+                    - '3D Printing'
+                    - '3D Modeling'
+                    - 'Displacement Mapping'
+                description: 'While working at GM we were provided unfettered access to two Creality K1 Max printers. I taught myself how to use Fusion 360 to create 3D shapes, and modify those shapes to create a logo plaque for my department, Oshawa Assembly IT.'
+                learned: 'I initially underestimated the challenge 3D printing poses, not just making the 3D model itself but getting the layers to form correctly for the exact object you are making. Patience is a virtue when dealing with this craft, though the built in camera does help with diagnosing issues with build quality.'
+                screenshots:
+                  - "in2-screenshot1.jpg"
+                  - "in2-screenshot2.jpg"
+                code: ''
+            -
+                id: in-3
+                title: 'New Application Server Provisioning'
+                tags:
+                    - 'Winter 2026'
+                    - Networking
+                    - Hands-On
+                    - 'Dell & Cisco Devices'
+                description: 'Four new application servers and two new top of rack (TOR) switches needed to be imaged, cabled and configured. I was tasked with racking, cabling and labeling the servers and switches provided an explanation & cut sheet. I executed the cut sheet with precision, and the new servers were cabled to spec including running new copper iDRAC cables to each LAN core.'
+                learned: 'I gained familiarity with enterprise networking environment concepts such as core stacks, distribution hubs and fibre panel patch throughs. The specialist who entrusted me with this project provided lots of documentation to follow which definitely took some of the pressure off memorization. I used my creativity to modify my plans on the fly to get the work done.'
+                screenshots:
+                  - "in3-screenshot1.jpg"
+                  - "in3-screenshot2.jpg"
+                code: ''
+    -
         name: Networking
         id: networking
         projects:
@@ -147,8 +194,9 @@ categories:
                 code: ''
             -
                 id: sys-2
-                title: 'Administering and Monitoring ADDS Summer 2025 - Network Administration II'
+                title: 'Administering and Monitoring ADDS - Network Administration II'
                 tags:
+                    - 'Summer 2025'
                     - 'Remote Admin'
                     - ADCS
                     - GPO
@@ -163,8 +211,9 @@ categories:
                 code: ''
             -
                 id: sys-3
-                title: 'Storage Management Summer 2025 - Linux II'
+                title: 'Storage Management - Linux II'
                 tags:
+                    - 'Summer 2025'
                     - Linux
                     - SSH
                     - LVM
@@ -179,8 +228,9 @@ categories:
                 code: ''
             -
                 id: sys-4
-                title: 'Failover Clustering Summer 2025 - Virtualization'
+                title: 'Failover Clustering - Virtualization'
                 tags:
+                    - 'Summer 2025'
                     - HyperV
                     - Cluster
                     - SAN
@@ -194,20 +244,25 @@ categories:
                 code: ''
             -
                 id: sys-5
-                title: 'HyperV Replica Summer 2025 - Virtualization'
+                title: 'HyperV Replica - Virtualization'
                 tags:
+                    - 'Summer 2025'
                     - HyperV
                     - Replica
                     - 'Active Directory'
                     - Final
                 description: "Group work - HyperV Replica is a feature of Windows Server HyperV which allows for the replication of virtual machines across the intranet or internet. Replica is primarily a disaster recovery tool used for quick response to workload disruption, and in this project we were tasked with demonstrating a live migration of a HyperV VM from one simulated site to another using my lab LAN. This allowed for an emulated network layer between my VMWare Workstation clients to provide some friction for the replica."
                 learned: "HyperV Replica was straightforward to configure. The primary focus of this project was the research about the protocols and process involved, specifically during the live migration we gained an appreciation for the complexity required to move operating systems with ease. Most of my learning was done in the configuration steps, where we configured multi-path I/O and Replica. We also learned that should the VM experience a failure an administrator would need to intervene to manually invoke the replication, which could be unacceptable downtime in some circumstances. Features like High Availability would be better suited to address that need."
-                screenshots: {  }
+                screenshots:
+                  - "sys5-screenshot1.png"
+                  - "sys5-screenshot2.jpg"
+                  - "sys5-screenshot3.jpg"
                 code: ''
             -
                 id: sys-6
-                title: 'Web & Backup Server Fall 2025 - Linux III'
+                title: 'Web & Backup Server - Linux III'
                 tags:
+                    - 'Fall 2025'
                     - Linux
                     - SSH
                     - LAMP
@@ -249,8 +304,9 @@ categories:
         projects:
             -
                 id: cld-1
-                title: 'CloudFormation Blog Deployment Summer 2025 - Cloud Fundamentals'
+                title: 'CloudFormation Blog Deployment - Cloud Fundamentals'
                 tags:
+                    - 'Summer 2025'
                     - CloudFormation
                     - VPC
                     - AWS
@@ -264,8 +320,9 @@ categories:
                 code: ''
             -
                 id: cld-2
-                title: 'Post-Distaster Cloud Migration Fall 2025 - Cloud Architect'
+                title: 'Post-Distaster Cloud Migration - Cloud Architect'
                 tags:
+                    - 'Fall 2025'
                     - Scenario-based
                     - Organizational Migration
                     - AWS
@@ -284,8 +341,9 @@ categories:
         projects:
             -
                 id: aut-1
-                title: 'Automated ADDS Rollout Winter 2025 - PowerShell'
+                title: 'Automated ADDS Rollout - PowerShell'
                 tags:
+                    - 'Winter 2025'
                     - PowerShell
                     - Scripting
                     - Automation
@@ -303,63 +361,52 @@ categories:
         projects:
             -
                 id: db-1
-                title: 'SQL to PostgreSQL Migration Fall 2025 - Database Management'
+                title: 'SQL to PostgreSQL Migration - Database Management'
                 tags:
+                    - 'Fall 2025'
                     - SQL
                     - PostgreSQL
                     - Migration
                 description: 'Group work - Migrated a Small Soccer Leagues Database from SQL Server to PostgreSQL, applied syntax conversions and data export/import procedures to transition relational data across database platforms.'
                 learned: 'Working through this migration exposed some of the practical frictions between database systems. Some of my validation steps failed initially because parts of the data had not been included in the initial export. Persistence was key here, and AI was utilized to help fix some of our foreign key relationship edge cases that needed inclusion.'
-                screenshots: {  }
-                code: ''
+                screenshots:
+                  - "db1-screenshot1.jpg"
+                  - "db1-screenshot2.jpg"
+                configs:
+                    -
+                        label: "Create Stadiums Table - SQL"
+                        code: |
+                            CREATE TABLE stadiums (
+                            stadiumid INT PRIMARY KEY, 
+                                 stadiumname VARCHAR(50) NOT NULL,
+                                 size VARCHAR(20) NOT NULL,
+                                 isTurf BIT NOT NULL,
+                                 fieldLength INT NOT NULL,
+                            maxCapacity INT
+                            );
+                    -
+                        label: "Create Stadiums Table - PostgresSQL"
+                        code: |
+                            CREATE TABLE stadiums (
+                             stadiumid SERIAL PRIMARY KEY, 
+                             stadiumname VARCHAR(50) NOT NULL,
+                             size VARCHAR(20) NOT NULL,
+                             isTurf BOOLEAN NOT NULL,
+                             fieldLength INT NOT NULL,
+                             maxCapacity INT
+                            );
             -
                 id: db-2
-                title: 'Database Normalization Fall 2025 - Database Management'
+                title: 'Database Normalization - Database Management'
                 tags:
+                    - 'Fall 2025'
                     - SQL
                     - Normalization
                     - 'Schema Design'
                 description: 'Group work - After creating the initial ERD for the Small Soccer Leagues Database, the database underwent normalization improvements to at least 3NF. After this project, the database schema designed by my group had atomic values, no partial dependencies, and no transitive dependencies.'
                 learned: 'As my group had not normalzied a database before this project, some of the instructions seemed difficult to follow at first and we initially thought that the schema was perfectly fine. Researching the task further revealed that several changes could be made to improve the normalization of our schema, and once we simplified and changed some of the '
-                screenshots: {  }
-                code: ''
-
-    -
-        name: Internship
-        id: internship
-        projects:
-            -
-                id: in-1
-                title: 'Placeholder'
-                tags:
-                    - Networking
-                    - Hands-On
-                    - Cisco
-                description: 'Group work - '
-                learned: 'What I learned.'
-                screenshots: {  }
-                code: ''
-            -
-                id: in-2
-                title: 'Placeholder'
-                tags:
-                    - '3D Printing'
-                    - '3D Modeling'
-                    - 'Displacement Mapping'
-                description: 'Description of the project.'
-                learned: 'What I learned.'
-                screenshots: {  }
-                code: ''
-            -
-                id: in-3
-                title: 'Placeholder'
-                tags:
-                    - Networking
-                    - Hands-On
-                    - Cisco
-                description: 'Description of the project.'
-                learned: 'What I learned.'
-                screenshots: {  }
+                screenshots:
+                  - "db2-screenshot1.png"
                 code: ''
 
 routable: true
