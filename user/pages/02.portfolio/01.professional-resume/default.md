@@ -44,6 +44,13 @@ experience:
       - "Installing, configuring, and repairing fiber optic FTTH networks — internet, IPTV, and home phone — including gateway modems, fiber terminals, central splitting points, and copper/fiber splicing."
       - "Operates across residential structures, MDUs, telephone poles, and public infrastructure in all weather conditions with full compliance to safety standards."
       - "Applies end-to-end network knowledge to troubleshoot and resolve service deficiencies efficiently."
+  - title: "Client Services Support Intern"
+    company: "General Motors"
+    period: "2026"
+    points:
+      - "Worked on call centre 2026 network refresh project alongside infrastructure specialists. Work included installing hardware, routing cables, and managing device templates & version controls. Worked with Cisco ASR 1000 series routers, 9000 series Catalyst switches, and older 6500 chassis."
+      - "Contributed to various network upgrade projects, including test track, firewall appliance & application server reconfiguration."
+      - "Took on self-guided projects such as 3d printing and network infrastructure provisioning, including racking new Dell R660 servers, performing cabling and documentation duties as required."
   - title: "Security Guard"
     company: "Paragon Security"
     period: "2020 — 2023"
