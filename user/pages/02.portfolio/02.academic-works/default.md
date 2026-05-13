@@ -10,11 +10,13 @@ categories:
         projects:
             -
                 id: net-1
-                title: 'Capstone Project Fall 2024, Data Communications 2'
+                title: 'Dual-WAN Circuit with Layer 2 Concepts - Data Communications II'
                 tags:
+                    - 'Fall 2024'
                     - STP
                     - Switching
                     - VLAN
+                    - Final
                 description: "Group work - My Data Communications II class focused heavily on switching concepts like STP and VLANS, and this project was my first tangible experience using lab equipment to build real enterprise networks. This project was particularly challenging because it included an understanding of basic routing to complete."
                 learned: "This project was complicated for my skill level at the time. We needed to implement port security, etherchannel between two office buildings and configure a DHCP server. We segmented the network with VLANs and configured dual ISP failover. We made a lot of mistakes in this project, including messing up my addressing table so it didn't work at first, implementing VLANs incorrectly on the wrong interfaces, and my router didn't work for most of the project. However this project taught me to have patience with my work and have a better mental understanding of the overall network schema."
                 screenshots:
@@ -72,12 +74,14 @@ categories:
                              channel-group 1 mode active
             -
                 id: net-2
-                title: 'Capstone Project Winter 2025, Data Communications 3'
+                title: 'Site-to-Site over GRE Tunnel - Data Communications III'
                 tags:
+                    - 'Winter 2025'
                     - Multi-site
                     - Routing
                     - VPN
-                description: "Group work - For my winter 2025 capstone project we were tasked with designing a network with two sites connected through an ISP router with encrypted communications using a GRE tunnel, implementing OSPF, configuring ACLs to secure the network and implementing NAT. My chosen implementation involved three routers; SecureNet, SafeTech and TelCom, and a fourth router was provisioned but not configured called ISP2 as a backup option for the company. A loopback address was configured on the ISP router to simulate a remote webserver endpoint."
+                    - Final
+                description: "Group work - My group was tasked with designing a network with two sites connected through an ISP router with encrypted communications using a GRE tunnel, implementing OSPF, configuring ACLs to secure the network and implementing NAT. My chosen implementation involved three routers; SecureNet, SafeTech and TelCom, and a fourth router was provisioned but not configured called ISP2 as a backup option for the company. A loopback address was configured on the ISP router to simulate a remote webserver endpoint."
                 learned: "Utilizing the GRE tunnel and ACL rules for secure connections, this project taught lessons about efficient address usage, and verifying correct information. Several times my GRE tunnel ended up in a state where it was quasi-working, where each endpoint could contact each other but nobody could each the web server. These sorts of technical troubleshooting processes have taught me a lot about persistence."
                 screenshots:
                   - "net2-screenshot1.jpg"
@@ -87,13 +91,15 @@ categories:
                 code: ''
             -
                 id: net-3
-                title: 'Final Case Study Fall 2025 - VoIP'
+                title: 'Enterprise PBX Environment - Unified Communications'
                 tags:
+                    - 'Fall 2025'
                     - VoIP
                     - SIP
                     - FreePBX
-                description: "Group work - Throughout this VoIP course we explored configuring PBX servers and calling through them using SIP trunking and dial peers. In this final case study, my group was tasked with meeting a business need for a multi-site VoIP system. The two branch offices were connected via the Headquarters router and each site had it's own PBX server to serve clients locally, and a SIP trunk was configured to allow inter-PBX calls. Each site was configured with two Linphone softphones for testing purposes."
-                learned: "FreePBX OS has quite a learning curve to it, and when combining three PBX instances together across a network it can introduce some issues. Linphones would register to the wrong instances, or DHCP would not be functioning however after correcting some minor issues with my configuration my design held up to the challenge presented and all phones could contact one another."
+                    - Final
+                description: "Group work - Throughout this VoIP course my group explored configuring PBX servers and calling through them using SIP trunking and dial peers. The main objective was meeting an enterprise business need for a multi-site VoIP system. The two branch offices were connected via the Headquarters router and each site had it's own PBX server to serve clients locally, a SIP trunk was configured to allow inter-PBX calls. Each site was configured with two Linphone softphones and Cisco IP phones for testing."
+                learned: "FreePBX OS has quite a learning curve to it, and when combining three PBX instances together across a network it can introduce some issues. Linphones would register to the wrong instances, or DHCP would not be functioning however after correcting some minor issues with my configuration my design held up to the challenge presented and all phones could contact one another from any PBX."
                 screenshots:
                   - "net3-screenshot1.png"
                   - "net3-screenshot2.jpg"
@@ -106,8 +112,9 @@ categories:
         projects:
             -
                 id: sec-1
-                title: 'Capstone Project Fall 2025 - Security 1'
+                title: 'Firewall Configuration for SMB - Security I'
                 tags:
+                    - 'Fall 2025'
                     - Cisco
                     - Firewall
                     - VPN
@@ -125,11 +132,13 @@ categories:
         projects:
             -
                 id: sys-1
-                title: 'Final Project Winter 2025 - Network Administration 1'
+                title: 'Enterprise AD Environment - Network Administration I'
                 tags:
+                    - 'Winter 2025'
                     - 'Active Directory'
                     - DNS
                     - DHCP
+                    - Final
                 description: "For this project I was tasked with creating a simple Active Directory domain using Windows Server 2022 GUI. I configured spencer.com, added some users (including a non root admin user) and created a nested network fileshare with NTFS permissions configured. On one of the servers IIS was configured along with an iSCSI virtual disk for easy sharing across the network. On the domain controller, DNS and DHCP roles were configured."
                 learned: "Many existing concepts were reinforced with continual good practice, such as configuring a non root admin user, file share permissions, and Windows Server ADDS and IIS configuration. During this particular project, my VMWare vNet corrupted and needed to be reset which was a learning experience unto itself."
                 screenshots:
@@ -138,7 +147,7 @@ categories:
                 code: ''
             -
                 id: sys-2
-                title: 'Administering and Monitoring Project Summer 2025 - Network Administration 2'
+                title: 'Administering and Monitoring ADDS Summer 2025 - Network Administration II'
                 tags:
                     - 'Remote Admin'
                     - ADCS
@@ -154,7 +163,7 @@ categories:
                 code: ''
             -
                 id: sys-3
-                title: 'Storage Management Project Summer 2025 - Linux 2'
+                title: 'Storage Management Summer 2025 - Linux II'
                 tags:
                     - Linux
                     - SSH
@@ -185,22 +194,24 @@ categories:
                 code: ''
             -
                 id: sys-5
-                title: 'Final Project Summer 2025 - Virtualization'
+                title: 'HyperV Replica Summer 2025 - Virtualization'
                 tags:
                     - HyperV
                     - Replica
                     - 'Active Directory'
+                    - Final
                 description: "Group work - HyperV Replica is a feature of Windows Server HyperV which allows for the replication of virtual machines across the intranet or internet. Replica is primarily a disaster recovery tool used for quick response to workload disruption, and in this project we were tasked with demonstrating a live migration of a HyperV VM from one simulated site to another using my lab LAN. This allowed for an emulated network layer between my VMWare Workstation clients to provide some friction for the replica."
                 learned: "HyperV Replica was straightforward to configure. The primary focus of this project was the research about the protocols and process involved, specifically during the live migration we gained an appreciation for the complexity required to move operating systems with ease. Most of my learning was done in the configuration steps, where we configured multi-path I/O and Replica. We also learned that should the VM experience a failure an administrator would need to intervene to manually invoke the replication, which could be unacceptable downtime in some circumstances. Features like High Availability would be better suited to address that need."
                 screenshots: {  }
                 code: ''
             -
                 id: sys-6
-                title: 'Final Project Fall 2025 - Linux 3'
+                title: 'Web & Backup Server Fall 2025 - Linux III'
                 tags:
                     - Linux
                     - SSH
                     - LAMP
+                    - Final
                 description: 'Pulling together my scripting and LAMP experience from previous assignments, this project required the configuration of automatic backups to a backup server using a SAMBA shared RAID6 array built from three sample devices. Using the web server, a small status page was built to display the output from this array, allowing for an administrator to keep constant tabs on the array. A script was also created to automate this backup task, and a cron job was used to automate the execution of the script each dayin the evening.'
                 learned: 'This challenge pulled together numerous elements from my Linux journey, from configuring RAID arrays to ensure that device failure does not result in lost data to some basic web design to build the web page. Each step of the server stack was visible with this challenge, and these are tasks which I now replicate on my home network to keep them as low risk as possible.'
                 screenshots: {  }
@@ -238,11 +249,12 @@ categories:
         projects:
             -
                 id: cld-1
-                title: 'Final Project Summer 2025 - Cloud 1'
+                title: 'CloudFormation Blog Deployment Summer 2025 - Cloud Fundamentals'
                 tags:
                     - CloudFormation
                     - VPC
                     - AWS
+                    - Final
                 description: "Group work - Using a sandbox environment, we were tasked with configuring a VPC, web server, S3 static website hosting, and used CloudFormation to deploy Wordpress on an EC2 instance."
                 learned: "Many of these tasks were review from previous labs in this course, however this was one of the first times that I used AWS systems without the guardrails of a formal lab environment. The lab included several elements which are cloud deployment fundamentals such as VPC configuration, and S3 static hosting and we used instructor provided files to deploy my Wordpress stack."
                 screenshots:
@@ -252,11 +264,12 @@ categories:
                 code: ''
             -
                 id: cld-2
-                title: 'Final Project - Cloud 2'
+                title: 'Post-Distaster Cloud Migration Fall 2025 - Cloud Architect'
                 tags:
                     - Scenario-based
                     - Organizational Migration
                     - AWS
+                    - Final
                 description: 'Group work - After a catastrophic fire, our Example Social Research Organization was left with outdated legacy on-premesis hardware and researchers across the globe to serve. My challenge was to find out the resources this hypothetical company would need to rebuild their infrastructure after such an event, and how to best utilize cloud services to replace their existing legacy hardware. It was decided that the AWS migration would mainly include an RDS migration to improve their database first, created auto-scaling EC2 instances to meet their compute needs, using load balancers to keep traffic steady between the newly provisioned services.'
                 learned: 'This scenario based challenge was straightforward for our group; with the clear business needs presented by the Example organization translating nearly perfectly into each AWS service we chose. I leveraged my understanding of the AWS ecosystem to plan out each of the services which would be required, and then to properly configure them to the needs of the organization.'
                 screenshots:
@@ -271,11 +284,12 @@ categories:
         projects:
             -
                 id: aut-1
-                title: 'Final Project Winter 2025 - PowerShell'
+                title: 'Automated ADDS Rollout Winter 2025 - PowerShell'
                 tags:
                     - PowerShell
                     - Scripting
                     - Automation
+                    - Final
                 description: "This project was fairly straightforward, and applied basic systems administration principles and the PowerShell used throughout the course to automate the deployment of Windows Active Directory Domain Services using SSH and PowerShell. File shares were created and permissions tested to verify security."
                 learned: "Completing a familiar task using only PowerShell commands reinforced existing understandings of ADDS concepts and allowed me a much better understanding of how the forest is created under the hood. This project also allowed me to create my own ADDS script to automate deployment of these types of servers in the future, greatly increasing efficiency."
                 screenshots:
@@ -289,43 +303,33 @@ categories:
         projects:
             -
                 id: db-1
-                title: 'MySQL to PostgreSQL Migration Fall 2025 - Database Management'
+                title: 'SQL to PostgreSQL Migration Fall 2025 - Database Management'
                 tags:
-                    - MySQL
+                    - SQL
                     - PostgreSQL
                     - Migration
-                description: 'Group work - '
-                learned: 'What I learned.'
+                description: 'Group work - Migrated a Small Soccer Leagues Database from SQL Server to PostgreSQL, applied syntax conversions and data export/import procedures to transition relational data across database platforms.'
+                learned: 'Working through this migration exposed some of the practical frictions between database systems. Some of my validation steps failed initially because parts of the data had not been included in the initial export. Persistence was key here, and AI was utilized to help fix some of our foreign key relationship edge cases that needed inclusion.'
                 screenshots: {  }
                 code: ''
             -
                 id: db-2
-                title: 'Database Normalization'
+                title: 'Database Normalization Fall 2025 - Database Management'
                 tags:
                     - SQL
                     - Normalization
                     - 'Schema Design'
-                description: 'Description of the project.'
-                learned: 'What I learned.'
-                screenshots: {  }
-                code: ''
-            -
-                id: db-3
-                title: 'Placeholder Project'
-                tags:
-                    - MariaDB
-                    - Queries
-                description: 'Description of the project.'
-                learned: 'What I learned.'
+                description: 'Group work - After creating the initial ERD for the Small Soccer Leagues Database, the database underwent normalization improvements to at least 3NF. After this project, the database schema designed by my group had atomic values, no partial dependencies, and no transitive dependencies.'
+                learned: 'As my group had not normalzied a database before this project, some of the instructions seemed difficult to follow at first and we initially thought that the schema was perfectly fine. Researching the task further revealed that several changes could be made to improve the normalization of our schema, and once we simplified and changed some of the '
                 screenshots: {  }
                 code: ''
 
     -
-        name: Field Placement
-        id: fieldplacement
+        name: Internship
+        id: internship
         projects:
             -
-                id: fp-1
+                id: in-1
                 title: 'Placeholder'
                 tags:
                     - Networking
@@ -336,7 +340,7 @@ categories:
                 screenshots: {  }
                 code: ''
             -
-                id: fp-2
+                id: in-2
                 title: 'Placeholder'
                 tags:
                     - '3D Printing'
@@ -347,7 +351,7 @@ categories:
                 screenshots: {  }
                 code: ''
             -
-                id: fp-3
+                id: in-3
                 title: 'Placeholder'
                 tags:
                     - Networking
